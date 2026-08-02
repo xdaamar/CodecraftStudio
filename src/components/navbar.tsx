@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { Menu, X } from 'lucide-react';
 
@@ -18,12 +18,35 @@ const NAV_LINKS: NavItem[] = [
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [isHidden, setIsHidden] = useState(false);
+  const [lastScrollY, setLastScrollY] = useState(0);
 
   const toggleMenu = () => setIsOpen((prev) => !prev);
   const closeMenu = () => setIsOpen(false);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+
+      if (currentScrollY > lastScrollY && currentScrollY > 60 && !isOpen) {
+        setIsHidden(true);
+      } else {
+        setIsHidden(false);
+      }
+
+      setLastScrollY(currentScrollY);
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [lastScrollY, isOpen]);
+
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-border-light bg-surface/90 backdrop-blur-md">
+    <header
+      className={`sticky top-0 z-50 w-full border-b border-border-light bg-surface/90 backdrop-blur-md shadow-md shadow-black/5 transition-transform duration-300 ease-in-out ${
+        isHidden ? '-translate-y-full' : 'translate-y-0'
+      }`}
+    >
       <nav
         className="mx-auto flex h-14 max-w-6xl items-center justify-between px-4 sm:h-16 sm:px-6"
         aria-label="Main navigation"
