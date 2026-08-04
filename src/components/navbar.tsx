@@ -3,8 +3,6 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { Menu, X } from 'lucide-react';
-import { FaWhatsapp } from 'react-icons/fa';
-import { WA_LINK } from '@/lib/constants';
 
 type NavItem = {
   label: string;
@@ -60,12 +58,12 @@ export function Navbar() {
           onClick={closeMenu}
           className="flex items-center gap-2.5 transition-opacity hover:opacity-90"
         >
-          <div className="h-8 w-8 shrink-0 overflow-hidden rounded-full bg-black/5">
+          <div className="h-8 w-8 shrink-0 overflow-hidden rounded-lg">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExMXN5aDNtempqeXUzMWRhZnNsbzdvYXZ5MjgxcjI3aWFscjRtejJveSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/d3MLdIYIHup9Q2xG/giphy.gif"
-              alt="Code Craft Studio logo animation"
-              className="h-full w-full object-cover"
+              src="https://cdn-icons-png.flaticon.com/512/1055/1055687.png"
+              alt="Code Craft Studio software house icon"
+              className="h-full w-full object-contain"
             />
           </div>
           <span className="font-heading text-lg font-bold tracking-tight text-text">
@@ -73,7 +71,7 @@ export function Navbar() {
           </span>
         </Link>
 
-        <div className="hidden md:flex md:items-center md:gap-6 lg:gap-8">
+        <div className="ml-auto hidden md:flex md:items-center md:gap-8">
           {NAV_LINKS.map((item) => (
             <Link
               key={item.label}
@@ -83,18 +81,6 @@ export function Navbar() {
               {item.label}
             </Link>
           ))}
-        </div>
-
-        <div className="hidden lg:flex lg:items-center">
-          <a
-            href={WA_LINK}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex h-9 items-center justify-center gap-1.5 rounded-full bg-green-500 px-4 text-xs font-semibold text-white shadow-xs transition hover:bg-green-600"
-          >
-            <FaWhatsapp className="text-sm" />
-            <span>Contact via Whatsapp</span>
-          </a>
         </div>
 
         <button
@@ -122,18 +108,6 @@ export function Navbar() {
                 </Link>
               </li>
             ))}
-            <li className="mt-2 pt-2 border-t border-border-light">
-              <a
-                href={WA_LINK}
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={closeMenu}
-                className="flex w-full items-center justify-center gap-2 rounded-full bg-green-500 px-4 py-3 text-sm font-semibold text-white shadow-xs transition hover:bg-green-600"
-              >
-                <FaWhatsapp className="text-base" />
-                <span>Contact via Whatsapp</span>
-              </a>
-            </li>
           </ul>
         </div>
       )}

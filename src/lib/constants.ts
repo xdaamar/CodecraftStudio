@@ -118,24 +118,10 @@ export const PRICING_PACKAGES: PricingPackageItem[] = [
     ],
   },
   {
-    label: 'Business Website',
-    badge: 'Paling Populer',
-    price: 'Mulai dari Rp1 jutaan',
-    highlight: true,
-    features: [
-      'Multi halaman lengkap',
-      'Company profile / Katalog',
-      'Galeri & layanan bisnis',
-      'SEO dasar Google lokal',
-      'Form / WhatsApp inquiry',
-      'Optimasi performa mobile & desktop',
-      'Gratis konsultasi 100%',
-      'Gratis domain',
-    ],
-  },
-  {
     label: 'Custom Solution',
+    badge: 'Paling Populer',
     price: 'Konsultasi sesuai kebutuhan proyek',
+    highlight: true,
     features: [
       'Sistem Web Custom',
       'Aplikasi Mobile Flutter',

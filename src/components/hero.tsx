@@ -6,24 +6,43 @@ import { FaWhatsapp } from 'react-icons/fa';
 import {
   SiHtml5,
   SiCss,
-  SiJavascript,
-  SiTypescript,
   SiNextdotjs,
   SiMysql,
   SiNodedotjs,
-  SiFlutter,
 } from 'react-icons/si';
 import { HERO_SERVICES_WORDS, SEO_CITIES, WA_LINK } from '@/lib/constants';
 
 const GIF_URL =
   'https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExMXN5aDNtempqeXUzMWRhZnNsbzdvYXZ5MjgxcjI3aWFscjRtejJveSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/d3MLdIYIHup9Q2xG/giphy.gif';
 
+const SERVICE_COLORS = [
+  'text-blue-600',
+  'text-emerald-600',
+  'text-indigo-600',
+  'text-violet-600',
+  'text-cyan-600',
+  'text-amber-600',
+];
+
+const CITY_COLORS = [
+  'text-blue-600',
+  'text-emerald-600',
+  'text-purple-600',
+  'text-teal-600',
+  'text-indigo-600',
+  'text-sky-600',
+  'text-green-600',
+  'text-violet-600',
+];
+
 function Typewriter({
   words,
+  colors,
   className = '',
   cursorColor = 'text-accent',
 }: {
   words: string[];
+  colors?: string[];
   className?: string;
   cursorColor?: string;
 }) {
@@ -68,16 +87,18 @@ function Typewriter({
     return () => clearTimeout(timer);
   }, [text, isDeleting, wordIndex, words, mounted]);
 
+  const currentColor = colors ? colors[wordIndex % colors.length] : '';
+
   if (!mounted) {
     return (
-      <span className={className}>
+      <span className={`${className} ${currentColor}`}>
         <span>{words[0]}</span>
       </span>
     );
   }
 
   return (
-    <span className={className}>
+    <span className={`${className} ${currentColor}`}>
       {text}
       <span className={`inline-block animate-pulse font-light ${cursorColor}`}>
         |
@@ -97,15 +118,16 @@ export function Hero() {
             </span>
 
             <h1 className="mt-6 flex flex-col gap-3 font-heading">
-              <span className="min-h-[2.2em] text-3xl font-extrabold tracking-tight text-text sm:min-h-[1.5em] sm:text-5xl lg:text-6xl">
-                <Typewriter words={HERO_SERVICES_WORDS} />
+              <span className="min-h-[2.2em] text-3xl font-extrabold tracking-tight sm:min-h-[1.5em] sm:text-5xl lg:text-6xl">
+                <Typewriter
+                  words={HERO_SERVICES_WORDS}
+                  colors={SERVICE_COLORS}
+                />
               </span>
               <span className="text-2xl font-bold tracking-tight text-text sm:text-3xl lg:text-4xl">
-                Code Craft Studio membantu bisnis tampil profesional melalui{' '}
-                <span className="text-blue-600">website modern</span>,{' '}
-                <span className="text-emerald-600">aplikasi</span>, dan{' '}
-                <span className="text-blue-600">optimasi SEO</span> yang siap
-                bersaing di Google.
+                Code Craft Studio membantu bisnis tampil profesional melalui
+                website modern, aplikasi, dan optimasi SEO yang siap bersaing di
+                Google.
               </span>
             </h1>
 
@@ -113,7 +135,8 @@ export function Hero() {
               <span>Melayani bisnis di </span>
               <Typewriter
                 words={SEO_CITIES}
-                className="font-bold text-blue-600"
+                colors={CITY_COLORS}
+                className="font-bold"
                 cursorColor="text-emerald-600"
               />
             </div>
@@ -136,45 +159,30 @@ export function Hero() {
                 />
               </div>
 
-              {/* Floating Tech Badges */}
-              <div className="absolute -top-2 left-2 z-10 inline-flex items-center gap-1.5 rounded-2xl border border-black/5 bg-white px-3 py-1.5 text-xs font-semibold text-text shadow-sm sm:-top-4 sm:left-4">
+              {/* Floating Tech Badges (5 items surrounding GIF with motion) */}
+              <div className="animate-float absolute -top-3 left-4 z-10 inline-flex items-center gap-1.5 rounded-2xl border border-black/5 bg-white px-3.5 py-1.5 text-xs font-semibold text-text shadow-md">
                 <SiHtml5 className="h-4 w-4 text-[#E34F26]" />
                 <span>HTML5</span>
               </div>
 
-              <div className="absolute -bottom-2 right-2 z-10 inline-flex items-center gap-1.5 rounded-2xl border border-black/5 bg-white px-3 py-1.5 text-xs font-semibold text-text shadow-sm sm:-bottom-4 sm:right-4">
+              <div className="animate-float-delayed absolute -bottom-3 right-4 z-10 inline-flex items-center gap-1.5 rounded-2xl border border-black/5 bg-white px-3.5 py-1.5 text-xs font-semibold text-text shadow-md">
                 <SiCss className="h-4 w-4 text-[#1572B6]" />
                 <span>CSS3</span>
               </div>
 
-              <div className="absolute -bottom-2 left-2 z-10 inline-flex items-center gap-1.5 rounded-2xl border border-black/5 bg-white px-3 py-1.5 text-xs font-semibold text-text shadow-sm sm:-bottom-4 sm:left-6">
-                <SiJavascript className="h-4 w-4 text-[#F7DF1E]" />
-                <span>JavaScript</span>
-              </div>
-
-              <div className="absolute -top-2 right-2 z-10 inline-flex items-center gap-1.5 rounded-2xl border border-black/5 bg-white px-3 py-1.5 text-xs font-semibold text-text shadow-sm sm:-top-4 sm:right-6">
-                <SiTypescript className="h-4 w-4 text-[#3178C6]" />
-                <span>TypeScript</span>
-              </div>
-
-              <div className="absolute top-1/4 -left-4 z-10 hidden items-center gap-1.5 rounded-2xl border border-black/5 bg-white px-3 py-1.5 text-xs font-semibold text-text shadow-sm sm:inline-flex">
+              <div className="animate-float-reverse absolute -top-3 right-4 z-10 inline-flex items-center gap-1.5 rounded-2xl border border-black/5 bg-white px-3.5 py-1.5 text-xs font-semibold text-text shadow-md">
                 <SiNextdotjs className="h-4 w-4 text-slate-900" />
                 <span>Next.js</span>
               </div>
 
-              <div className="absolute top-1/4 -right-4 z-10 hidden items-center gap-1.5 rounded-2xl border border-black/5 bg-white px-3 py-1.5 text-xs font-semibold text-text shadow-sm sm:inline-flex">
-                <SiMysql className="h-4 w-4 text-[#4479A1]" />
-                <span>MySQL</span>
-              </div>
-
-              <div className="absolute bottom-1/4 -left-4 z-10 hidden items-center gap-1.5 rounded-2xl border border-black/5 bg-white px-3 py-1.5 text-xs font-semibold text-text shadow-sm sm:inline-flex">
+              <div className="animate-float absolute -bottom-3 left-4 z-10 inline-flex items-center gap-1.5 rounded-2xl border border-black/5 bg-white px-3.5 py-1.5 text-xs font-semibold text-text shadow-md">
                 <SiNodedotjs className="h-4 w-4 text-[#5FA04E]" />
                 <span>Node.js</span>
               </div>
 
-              <div className="absolute bottom-1/4 -right-4 z-10 hidden items-center gap-1.5 rounded-2xl border border-black/5 bg-white px-3 py-1.5 text-xs font-semibold text-text shadow-sm sm:inline-flex">
-                <SiFlutter className="h-4 w-4 text-[#02569B]" />
-                <span>Flutter</span>
+              <div className="animate-float-delayed absolute top-1/2 -right-4 z-10 hidden -translate-y-1/2 items-center gap-1.5 rounded-2xl border border-black/5 bg-white px-3.5 py-1.5 text-xs font-semibold text-text shadow-md sm:inline-flex">
+                <SiMysql className="h-4 w-4 text-[#4479A1]" />
+                <span>MySQL</span>
               </div>
             </div>
           </div>
@@ -192,7 +200,7 @@ export function Hero() {
 
             <Link
               href="#services"
-              className="inline-flex h-12 w-full items-center justify-center rounded-full border border-border-light bg-surface px-7 text-sm font-semibold text-text transition hover:border-black/10 hover:bg-black/5 sm:w-auto"
+              className="inline-flex h-12 w-full items-center justify-center rounded-full bg-slate-900 px-7 text-sm font-semibold text-white shadow-md transition hover:bg-slate-800 sm:w-auto"
             >
               Lihat Layanan Kami
             </Link>

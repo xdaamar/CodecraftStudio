@@ -28,54 +28,73 @@ export function PricingPackages() {
           </p>
         </div>
 
-        <div className="mt-12 grid grid-cols-1 gap-8 lg:grid-cols-3 lg:items-stretch">
+        <div className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-2 lg:items-stretch">
           {PRICING_PACKAGES.map((pkg) => {
-            const cardStyle = pkg.highlight
-              ? 'border-2 border-green-500 shadow-[0_20px_60px_rgba(34,197,94,0.12)]'
-              : 'border border-black/5 shadow-2xs hover:shadow-md';
-
             const isCustom = pkg.label === 'Custom Solution';
+
+            const cardStyle = isCustom
+              ? 'bg-slate-900 text-white border border-slate-800 shadow-[0_20px_60px_rgba(15,23,42,0.3)] hover:border-slate-700 hover:shadow-2xl'
+              : 'bg-gradient-to-b from-white to-slate-50 border border-slate-200 shadow-md hover:shadow-lg text-text';
 
             return (
               <article
                 key={pkg.label}
-                className={`flex flex-col justify-between rounded-[2rem] bg-white p-6 transition duration-300 lg:p-8 ${cardStyle}`}
+                className={`flex flex-col justify-between rounded-[2rem] p-6 transition duration-300 lg:p-8 ${cardStyle}`}
               >
                 <div>
                   <div className="flex items-center justify-between gap-2">
-                    <span className="font-heading text-xl font-bold tracking-tight text-text sm:text-2xl">
+                    <span
+                      className={`font-heading text-xl font-bold tracking-tight sm:text-2xl ${
+                        isCustom ? 'text-white' : 'text-text'
+                      }`}
+                    >
                       {pkg.label}
                     </span>
                     {pkg.badge && (
-                      <span className="rounded-full bg-green-100 px-3 py-1 text-xs font-bold text-green-700">
+                      <span
+                        className={`rounded-full px-3 py-1 text-xs font-bold ${
+                          isCustom
+                            ? 'border border-green-500/30 bg-green-500/20 text-green-400'
+                            : 'bg-green-100 text-green-700'
+                        }`}
+                      >
                         {pkg.badge}
                       </span>
                     )}
                   </div>
 
                   <p
-                    className={`mt-3 font-heading font-extrabold text-green-600 ${
-                      isCustom ? 'text-xl sm:text-2xl' : 'text-2xl sm:text-3xl'
+                    className={`mt-3 font-heading font-extrabold ${
+                      isCustom
+                        ? 'text-xl text-green-400 sm:text-2xl'
+                        : 'text-2xl text-green-600 sm:text-3xl'
                     }`}
                   >
                     {pkg.price}
                   </p>
 
-                  <hr className="my-6 border-border-light" />
+                  <hr
+                    className={`my-6 ${
+                      isCustom ? 'border-slate-800' : 'border-border-light'
+                    }`}
+                  />
 
-                  <ul
-                    className={
-                      isCustom
-                        ? 'grid grid-cols-1 gap-3 sm:grid-cols-2'
-                        : 'space-y-3.5'
-                    }
-                  >
+                  {/* 1 Kolom untuk kedua paket */}
+                  <ul className="space-y-3.5">
                     {pkg.features.map((feat) => (
                       <li
                         key={feat}
-                        className="flex items-start gap-3 text-sm text-muted sm:text-base"
+                        className={`flex items-start gap-3 text-sm sm:text-base ${
+                          isCustom ? 'text-slate-300' : 'text-muted'
+                        }`}
                       >
-                        <span className="mt-0.5 inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-green-50 text-green-600">
+                        <span
+                          className={`mt-0.5 inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-full ${
+                            isCustom
+                              ? 'bg-green-950 text-green-400'
+                              : 'bg-green-50 text-green-600'
+                          }`}
+                        >
                           <Check className="h-3.5 w-3.5" />
                         </span>
                         <span>{feat}</span>
