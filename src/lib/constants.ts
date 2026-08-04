@@ -33,31 +33,66 @@ export type ServiceItem = {
   description: string;
 };
 
+export const HERO_SERVICES_WORDS = [
+  'Jasa Pembuatan Website',
+  'Jasa Pembuatan Aplikasi Mobile',
+  'Jasa Optimasi SEO Google',
+  'Jasa Pembuatan Company Profile',
+  'Jasa Pembuatan Landing Page Bisnis',
+  'Jasa Pembuatan Sistem Web Custom',
+];
+
+export const SEO_CITIES = [
+  'Sukoharjo',
+  'Klaten',
+  'Karanganyar',
+  'Wonogiri',
+  'Surakarta',
+  'Solo Baru',
+  'Jawa Tengah',
+  'Seluruh Indonesia',
+];
+
 export const SERVICES_ITEMS: ServiceItem[] = [
   {
-    title: 'Landing Page Bisnis',
+    title: 'Website Company Profile',
     description:
-      'Cocok untuk promosi produk, jasa, event, atau kampanye iklan digital dengan fokus pada tampilan modern dan conversion.',
+      'Membangun profil bisnis resmi yang profesional, elegan, dan terpercaya untuk meningkatkan kredibilitas perusahaan di mata klien dan mitra bisnis.',
   },
   {
-    title: 'Company Profile UMKM',
+    title: 'Landing Page Marketing',
     description:
-      'Menampilkan profil usaha, layanan, galeri, lokasi, dan kontak WhatsApp secara profesional agar bisnis lebih dipercaya pelanggan.',
+      'Halaman promosi fokus konversi tinggi yang dirancang untuk iklan Google Ads, Meta Ads, kampanye produk, maupun penawaran jasa digital.',
   },
   {
-    title: 'Website Kursus & Pendidikan',
+    title: 'Toko Online / Katalog Produk',
     description:
-      'Menyediakan informasi program belajar, jadwal, galeri kegiatan, dan pendaftaran yang mudah diakses calon siswa maupun orang tua.',
+      'Katalog digital modern yang memudahkan pelanggan melihat produk, mengecek harga, dan langsung memesan via WhatsApp atau checkout form.',
   },
   {
-    title: 'Website Produk Digital / Startup',
+    title: 'Aplikasi Mobile Android / Flutter',
     description:
-      'Landing page modern untuk SaaS, aplikasi, atau produk digital dengan fokus pada performa, SEO, dan pengalaman pengguna.',
+      'Pengembangan aplikasi mobile modern berkinerja cepat dengan Flutter untuk memperluas jangkauan layanan bisnis Anda ke pengguna HP.',
   },
   {
-    title: 'Optimasi SEO Dasar',
+    title: 'Sistem Web Custom Bisnis',
     description:
-      'Meliputi struktur heading yang rapi, metadata SEO, sitemap, optimasi kecepatan, dan dasar optimasi pencarian lokal Google.',
+      'Aplikasi berbasis web custom untuk manajemen data, portal klien, sistem kasir, atau otomatisasi proses operasional usaha Anda.',
+  },
+  {
+    title: 'Optimasi SEO & Google Search Console',
+    description:
+      'Struktur website ramah SEO Google, metadata lengkap, sitemap, serta optimasi kecepatan agar mudah ditemukan di pencarian Google lokal.',
+  },
+  {
+    title: 'Maintenance & Support Website',
+    description:
+      'Layanan perawatan rutin, pembaruan sistem, backup berkala, dan monitoring performa agar website selalu aman dan online 24/7.',
+  },
+  {
+    title: 'Integrasi WhatsApp & Form Leads',
+    description:
+      'Tombol interaktif dan formulir konsultasi yang terhubung langsung ke WhatsApp bisnis untuk mempercepat pelayanan dan konversi leads.',
   },
 ];
 
@@ -83,15 +118,15 @@ export const PRICING_PACKAGES: PricingPackageItem[] = [
     ],
   },
   {
-    label: 'Business Profile',
+    label: 'Business Website',
     badge: 'Paling Populer',
     price: 'Mulai dari Rp1 jutaan',
     highlight: true,
     features: [
-      'Multi halaman',
-      'Company profile lengkap',
-      'Galeri & layanan',
-      'SEO dasar Google',
+      'Multi halaman lengkap',
+      'Company profile / Katalog',
+      'Galeri & layanan bisnis',
+      'SEO dasar Google lokal',
       'Form / WhatsApp inquiry',
       'Optimasi performa mobile & desktop',
       'Gratis konsultasi 100%',
@@ -99,17 +134,17 @@ export const PRICING_PACKAGES: PricingPackageItem[] = [
     ],
   },
   {
-    label: 'SEO Growth',
-    price: 'Mulai dari Rp2 jutaan',
+    label: 'Custom Solution',
+    price: 'Konsultasi sesuai kebutuhan proyek',
     features: [
-      'Website custom modern',
-      'Struktur SEO lokal',
-      'Blog artikel SEO',
-      'Optimasi Core Web Vitals',
-      'Integrasi Google Search Console ready',
-      'Pendampingan publikasi awal',
-      'Gratis konsultasi 100%',
-      'Gratis domain',
+      'Sistem Web Custom',
+      'Aplikasi Mobile Flutter',
+      'Dashboard Admin',
+      'Integrasi Database MySQL / PostgreSQL',
+      'Multi Role User',
+      'API & Integrasi Pihak Ketiga',
+      'SEO Technical Setup',
+      'Konsultasi Gratis 100%',
     ],
   },
 ];
@@ -125,6 +160,39 @@ export const MAINTENANCE_PACKAGE = {
     'bantuan teknis via WhatsApp',
   ],
 };
+
+export type BenefitCardItem = {
+  title: string;
+  features: string[];
+  theme: 'dark' | 'light';
+};
+
+export const BENEFIT_CARDS: BenefitCardItem[] = [
+  {
+    title: 'Kenapa Memilih Code Craft Studio',
+    features: [
+      'Desain modern & profesional',
+      'SEO-friendly sejak awal',
+      'Mobile-first responsive design',
+      'Loading website cepat',
+      'Gratis konsultasi 100%',
+      'Gratis domain untuk paket tertentu',
+    ],
+    theme: 'dark',
+  },
+  {
+    title: 'Dukungan Setelah Website Online',
+    features: [
+      'Maintenance mulai Rp50.000/bulan',
+      'Update konten ringan',
+      'Backup berkala',
+      'Monitoring performa dasar',
+      'Bantuan teknis via WhatsApp',
+      'Pendampingan pengembangan lanjutan',
+    ],
+    theme: 'light',
+  },
+];
 
 export type BenefitItem = {
   title: string;

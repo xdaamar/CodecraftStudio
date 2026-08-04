@@ -9,6 +9,7 @@ import {
 export function PricingPackages() {
   return (
     <section
+      id="pricing"
       aria-label="Paket Website"
       className="w-full bg-surface py-16 lg:py-24"
     >
@@ -33,6 +34,8 @@ export function PricingPackages() {
               ? 'border-2 border-green-500 shadow-[0_20px_60px_rgba(34,197,94,0.12)]'
               : 'border border-black/5 shadow-2xs hover:shadow-md';
 
+            const isCustom = pkg.label === 'Custom Solution';
+
             return (
               <article
                 key={pkg.label}
@@ -50,13 +53,23 @@ export function PricingPackages() {
                     )}
                   </div>
 
-                  <p className="mt-3 font-heading text-2xl font-extrabold text-green-600 sm:text-3xl">
+                  <p
+                    className={`mt-3 font-heading font-extrabold text-green-600 ${
+                      isCustom ? 'text-xl sm:text-2xl' : 'text-2xl sm:text-3xl'
+                    }`}
+                  >
                     {pkg.price}
                   </p>
 
                   <hr className="my-6 border-border-light" />
 
-                  <ul className="space-y-3.5">
+                  <ul
+                    className={
+                      isCustom
+                        ? 'grid grid-cols-1 gap-3 sm:grid-cols-2'
+                        : 'space-y-3.5'
+                    }
+                  >
                     {pkg.features.map((feat) => (
                       <li
                         key={feat}

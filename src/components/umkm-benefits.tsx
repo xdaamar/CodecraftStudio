@@ -1,4 +1,5 @@
-import { UMKM_BENEFITS } from '@/lib/constants';
+import { Check } from 'lucide-react';
+import { BENEFIT_CARDS } from '@/lib/constants';
 
 export function UMKMBenefits() {
   return (
@@ -17,26 +18,54 @@ export function UMKMBenefits() {
         </h2>
       </div>
 
-      <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2 lg:mt-16">
-        {UMKM_BENEFITS.map((item) => (
-          <div
-            key={item.title}
-            className={`flex flex-col justify-between rounded-[1.5rem] border border-border-light bg-surface p-6 shadow-xs transition duration-300 hover:-translate-y-1 hover:shadow-md sm:p-8 ${
-              item.fullWidth
-                ? 'md:col-span-2 md:flex-row md:items-center md:justify-between md:gap-8'
-                : ''
-            }`}
-          >
-            <div>
-              <h3 className="font-heading text-xl font-bold text-text sm:text-2xl">
-                {item.title}
-              </h3>
-              <p className="mt-3 text-base leading-relaxed text-muted">
-                {item.description}
-              </p>
-            </div>
-          </div>
-        ))}
+      <div className="mt-12 grid grid-cols-1 gap-8 lg:grid-cols-2 lg:mt-16">
+        {BENEFIT_CARDS.map((card) => {
+          const isDark = card.theme === 'dark';
+          const cardStyle = isDark
+            ? 'bg-slate-900 text-white shadow-md'
+            : 'bg-gradient-to-br from-emerald-50 to-white text-text border border-black/5 shadow-sm';
+
+          return (
+            <article
+              key={card.title}
+              className={`flex flex-col justify-between rounded-[2rem] p-8 transition duration-300 sm:p-10 ${cardStyle}`}
+            >
+              <div>
+                <h3
+                  className={`font-heading text-2xl font-bold tracking-tight sm:text-3xl ${
+                    isDark ? 'text-white' : 'text-text'
+                  }`}
+                >
+                  {card.title}
+                </h3>
+
+                <ul className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2">
+                  {card.features.map((feature) => (
+                    <li
+                      key={feature}
+                      className="flex items-start gap-3 text-sm sm:text-base"
+                    >
+                      <span
+                        className={`mt-0.5 inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-full ${
+                          isDark
+                            ? 'bg-green-950 text-green-400'
+                            : 'bg-green-100 text-green-600'
+                        }`}
+                      >
+                        <Check className="h-3.5 w-3.5" />
+                      </span>
+                      <span
+                        className={isDark ? 'text-slate-200' : 'text-text/90'}
+                      >
+                        {feature}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </article>
+          );
+        })}
       </div>
     </section>
   );

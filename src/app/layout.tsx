@@ -16,9 +16,10 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: 'Damar — Web Developer & SEO Web Service',
+  title:
+    'Code Craft Studio — Software House & Web Development Agency Indonesia',
   description:
-    'Portfolio dan landing page jasa pembuatan website modern, cepat, dan teroptimasi SEO oleh Damar. Fokus pada hasil kerja dan layanan berkualitas.',
+    'Code Craft Studio adalah software house profesional yang melayani pembuatan website modern, aplikasi mobile, dan optimasi SEO lokal di Sukoharjo, Solo, Jawa Tengah, dan Indonesia.',
 };
 
 export default function RootLayout({
