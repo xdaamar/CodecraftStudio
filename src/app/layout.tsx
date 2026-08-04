@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { Manrope, Inter } from 'next/font/google';
+import localFont from 'next/font/local';
 import { Navbar } from '@/components/navbar';
 import './globals.css';
 
@@ -13,6 +14,12 @@ const inter = Inter({
   variable: '--font-inter',
   subsets: ['latin'],
   weight: ['400', '500', '600', '700'],
+});
+
+const playwrite = localFont({
+  src: '../../public/fonts/Playwrite_NZ_Basic/PlaywriteNZBasic-VariableFont_wght.ttf',
+  variable: '--font-playwrite',
+  display: 'swap',
 });
 
 export const metadata: Metadata = {
@@ -30,7 +37,7 @@ export default function RootLayout({
   return (
     <html
       lang="id"
-      className={`${manrope.variable} ${inter.variable} min-h-screen antialiased`}
+      className={`${manrope.variable} ${inter.variable} ${playwrite.variable} min-h-screen antialiased`}
     >
       <body className="flex min-h-screen flex-col bg-background font-sans text-text">
         <Navbar />

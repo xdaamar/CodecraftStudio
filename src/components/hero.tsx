@@ -124,7 +124,7 @@ export function Hero() {
               />
             </h1>
 
-            <p className="mt-4 max-w-xl text-base leading-relaxed text-muted sm:text-lg">
+            <p className="mt-4 max-w-xl font-playwrite text-base leading-relaxed text-muted sm:text-lg">
               Kami membantu UMKM, perusahaan, lembaga pendidikan, dan startup
               membangun website cepat, mobile-friendly, SEO-ready, dan mudah
               dikembangkan untuk kebutuhan bisnis jangka panjang.

@@ -32,7 +32,12 @@
   --color-border-light: var(--border-light);
   --font-heading: var(--font-manrope), sans-serif;
   --font-sans: var(--font-inter), sans-serif;
+  --font-playwrite: var(--font-playwrite), cursive;
   --animate-marquee: marquee 35s linear infinite;
+}
+
+@utility font-playwrite {
+  font-family: var(--font-playwrite), cursive;
 }
 
 @keyframes marquee {
