@@ -51,15 +51,19 @@ function StackIcon({ name }: { name: string }) {
 function MarqueeRow({
   items,
   reverseDelay = false,
+  direction = 'left',
 }: {
   items: StackItem[];
   reverseDelay?: boolean;
+  direction?: 'left' | 'right';
 }) {
   const duplicated = [...items, ...items, ...items, ...items];
+  const animationClass =
+    direction === 'right' ? 'animate-marquee-reverse' : 'animate-marquee';
 
   return (
     <div
-      className={`flex w-max animate-marquee items-center gap-4 ${
+      className={`flex w-max items-center gap-4 ${animationClass} ${
         reverseDelay ? '[animation-delay:-17s]' : ''
       }`}
     >
@@ -83,7 +87,7 @@ export function StackMarquee() {
       className="w-full overflow-hidden border-y border-border-light bg-surface py-10"
     >
       <div className="flex flex-col gap-4">
-        <MarqueeRow items={STACK_ITEMS_ROW_1} />
+        <MarqueeRow items={STACK_ITEMS_ROW_1} direction="right" />
         <MarqueeRow items={STACK_ITEMS_ROW_2} reverseDelay />
       </div>
     </section>

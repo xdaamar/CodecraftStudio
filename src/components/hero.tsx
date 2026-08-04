@@ -117,19 +117,18 @@ export function Hero() {
               Software House • Web Development • SEO Agency
             </span>
 
-            <h1 className="mt-6 flex flex-col gap-3 font-heading">
-              <span className="min-h-[2.2em] text-3xl font-extrabold tracking-tight sm:min-h-[1.5em] sm:text-5xl lg:text-6xl">
-                <Typewriter
-                  words={HERO_SERVICES_WORDS}
-                  colors={SERVICE_COLORS}
-                />
-              </span>
-              <span className="text-2xl font-bold tracking-tight text-text sm:text-3xl lg:text-4xl">
-                Code Craft Studio membantu bisnis tampil profesional melalui
-                website modern, aplikasi, dan optimasi SEO yang siap bersaing di
-                Google.
-              </span>
+            <h1 className="mt-6 min-h-[2.2em] font-heading text-3xl font-extrabold tracking-tight sm:min-h-[1.5em] sm:text-5xl lg:text-6xl">
+              <Typewriter
+                words={HERO_SERVICES_WORDS}
+                colors={SERVICE_COLORS}
+              />
             </h1>
+
+            <p className="mt-4 max-w-xl text-base leading-relaxed text-muted sm:text-lg">
+              Kami membantu UMKM, perusahaan, lembaga pendidikan, dan startup
+              membangun website cepat, mobile-friendly, SEO-ready, dan mudah
+              dikembangkan untuk kebutuhan bisnis jangka panjang.
+            </p>
 
             <div className="mt-4 flex items-center gap-1.5 text-base font-semibold text-muted sm:text-lg lg:text-xl">
               <span>Melayani bisnis di </span>
@@ -140,12 +139,6 @@ export function Hero() {
                 cursorColor="text-emerald-600"
               />
             </div>
-
-            <p className="mt-6 max-w-xl text-base leading-relaxed text-muted sm:text-lg">
-              Kami membantu UMKM, perusahaan, lembaga pendidikan, dan startup
-              membangun website cepat, mobile-friendly, SEO-ready, dan mudah
-              dikembangkan untuk kebutuhan bisnis jangka panjang.
-            </p>
           </div>
 
           <div className="w-full lg:col-span-5 lg:col-start-8 lg:row-span-2 lg:row-start-1 lg:self-center">
@@ -159,28 +152,28 @@ export function Hero() {
                 />
               </div>
 
-              {/* Floating Tech Badges (5 items surrounding GIF with motion) */}
-              <div className="animate-float absolute -top-3 left-4 z-10 inline-flex items-center gap-1.5 rounded-2xl border border-black/5 bg-white px-3.5 py-1.5 text-xs font-semibold text-text shadow-md">
+              {/* Floating Tech Badges (Lebih rekat menimpa pinggiran GIF dengan animasi melayang) */}
+              <div className="animate-float absolute top-4 left-4 z-10 inline-flex items-center gap-1.5 rounded-2xl border border-black/5 bg-white px-3.5 py-1.5 text-xs font-semibold text-text shadow-md">
                 <SiHtml5 className="h-4 w-4 text-[#E34F26]" />
                 <span>HTML5</span>
               </div>
 
-              <div className="animate-float-delayed absolute -bottom-3 right-4 z-10 inline-flex items-center gap-1.5 rounded-2xl border border-black/5 bg-white px-3.5 py-1.5 text-xs font-semibold text-text shadow-md">
+              <div className="animate-float-delayed absolute bottom-6 right-4 z-10 inline-flex items-center gap-1.5 rounded-2xl border border-black/5 bg-white px-3.5 py-1.5 text-xs font-semibold text-text shadow-md">
                 <SiCss className="h-4 w-4 text-[#1572B6]" />
                 <span>CSS3</span>
               </div>
 
-              <div className="animate-float-reverse absolute -top-3 right-4 z-10 inline-flex items-center gap-1.5 rounded-2xl border border-black/5 bg-white px-3.5 py-1.5 text-xs font-semibold text-text shadow-md">
+              <div className="animate-float-reverse absolute top-4 right-4 z-10 inline-flex items-center gap-1.5 rounded-2xl border border-black/5 bg-white px-3.5 py-1.5 text-xs font-semibold text-text shadow-md">
                 <SiNextdotjs className="h-4 w-4 text-slate-900" />
                 <span>Next.js</span>
               </div>
 
-              <div className="animate-float absolute -bottom-3 left-4 z-10 inline-flex items-center gap-1.5 rounded-2xl border border-black/5 bg-white px-3.5 py-1.5 text-xs font-semibold text-text shadow-md">
+              <div className="animate-float absolute bottom-6 left-4 z-10 inline-flex items-center gap-1.5 rounded-2xl border border-black/5 bg-white px-3.5 py-1.5 text-xs font-semibold text-text shadow-md">
                 <SiNodedotjs className="h-4 w-4 text-[#5FA04E]" />
                 <span>Node.js</span>
               </div>
 
-              <div className="animate-float-delayed absolute top-1/2 -right-4 z-10 hidden -translate-y-1/2 items-center gap-1.5 rounded-2xl border border-black/5 bg-white px-3.5 py-1.5 text-xs font-semibold text-text shadow-md sm:inline-flex">
+              <div className="animate-float-delayed absolute top-1/2 right-2 z-10 hidden -translate-y-1/2 items-center gap-1.5 rounded-2xl border border-black/5 bg-white px-3.5 py-1.5 text-xs font-semibold text-text shadow-md sm:inline-flex">
                 <SiMysql className="h-4 w-4 text-[#4479A1]" />
                 <span>MySQL</span>
               </div>
