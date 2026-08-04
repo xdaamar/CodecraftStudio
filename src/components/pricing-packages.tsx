@@ -44,16 +44,21 @@ export function PricingPackages() {
         >
           {PRICING_PACKAGES.map((pkg) => {
             const isCustom = pkg.label === 'Custom Solution';
+            const isPopular = pkg.badge === 'Paling Populer';
 
             const cardStyle = isCustom
-              ? 'bg-slate-900 text-white border border-slate-800 shadow-[0_20px_60px_rgba(15,23,42,0.3)] hover:border-slate-700 hover:shadow-2xl'
+              ? 'bg-slate-900 text-white border-2 border-slate-800 shadow-[0_20px_60px_rgba(15,23,42,0.3)] hover:border-slate-700 hover:shadow-2xl'
               : 'bg-gradient-to-b from-white to-slate-50 border border-slate-200 shadow-md hover:shadow-lg text-text';
+
+            const mobileHighlight = isPopular
+              ? 'ring-2 ring-green-500 border-green-500/80'
+              : '';
 
             return (
               <MotionChild
                 key={pkg.label}
                 variant={isCustom ? 'scaleIn' : 'fadeUp'}
-                className={`flex flex-col justify-between rounded-[2rem] p-6 transition duration-300 lg:p-8 ${cardStyle}`}
+                className={`flex flex-col justify-between rounded-[2rem] p-6 transition duration-300 lg:p-8 ${cardStyle} ${mobileHighlight}`}
               >
                 <div>
                   <div className="flex items-center justify-between gap-2">

@@ -53,6 +53,19 @@
   animation: marquee 35s linear infinite;
 }
 
+@keyframes marquee-mobile {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@utility animate-marquee-mobile {
+  animation: marquee-mobile 42s linear infinite;
+}
+
 @keyframes marquee-reverse {
   from {
     transform: translateX(-50%);
@@ -98,6 +111,18 @@
   animation: float-reverse 4s ease-in-out 0.8s infinite;
 }
 
+/* Slide-up keyframe for mobile bottom sheet */
+@keyframes slide-up {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
 *,
 *::before,
 *::after {
@@ -115,4 +140,24 @@ body {
   color: var(--text);
   font-family: var(--font-sans);
   line-height: 1.7;
+  /* Minimum body text size for comfortable mobile reading */
+  font-size: 15px;
+}
+
+/* Mobile typography scale */
+h1 {
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+}
+
+@media (max-width: 768px) {
+  h1 {
+    line-height: 1.1;
+    letter-spacing: -0.025em;
+  }
+
+  body {
+    font-size: 15px;
+    line-height: 1.75;
+  }
 }

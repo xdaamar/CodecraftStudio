@@ -69,14 +69,14 @@ export function ServicesSection() {
 
         <MotionDiv
           variant="staggerContainer"
-          className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2"
+          className="mt-12 grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-6"
         >
           {SERVICES_ITEMS.map((service, idx) => (
             <MotionChild
               key={service.title}
               variant="fadeUp"
               whileHover={{ y: -4, transition: { duration: 0.2 } }}
-              className="flex flex-col rounded-[1.75rem] border border-slate-200/70 bg-white/90 p-6 shadow-[0_10px_40px_rgba(15,23,42,0.05)] backdrop-blur-sm transition-shadow duration-300 hover:shadow-[0_20px_45px_rgba(15,23,42,0.08)] sm:p-8"
+              className="flex flex-col rounded-[1.5rem] border border-slate-200/70 bg-white/90 p-5 shadow-[0_10px_40px_rgba(15,23,42,0.05)] backdrop-blur-sm transition-shadow duration-300 hover:shadow-[0_20px_45px_rgba(15,23,42,0.08)] sm:p-8"
             >
               <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-blue-50/80">
                 <ServiceIcon index={idx} />

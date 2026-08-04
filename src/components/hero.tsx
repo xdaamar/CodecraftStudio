@@ -21,6 +21,8 @@ import {
 const GIF_URL =
   'https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExMXN5aDNtempqeXUzMWRhZnNsbzdvYXZ5MjgxcjI3aWFscjRtejJveSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/d3MLdIYIHup9Q2xG/giphy.gif';
 
+const MOBILE_VIDEO_SRC = '/videos/herosection_mobileview.webm';
+
 const SERVICE_COLORS = [
   'text-blue-600',
   'text-emerald-600',
@@ -122,7 +124,92 @@ export function Hero() {
       aria-label="Hero"
       className="w-full bg-white"
     >
-      <div className="mx-auto flex min-h-[85vh] max-w-6xl flex-col justify-center px-4 py-16 sm:px-6 lg:py-24">
+      {/* ─── MOBILE LAYOUT (< lg) ───────────────────────────────────────────── */}
+      <div className="flex flex-col pb-10 pt-0 lg:hidden">
+        {/* 0. Eyebrow — di atas video */}
+        <div className="px-4 pb-3 pt-6">
+          <span className="inline-flex items-center rounded-full border border-border-light bg-surface px-3 py-1 text-xs font-semibold uppercase tracking-widest text-muted shadow-xs">
+            Software House • Web Development • SEO
+          </span>
+        </div>
+
+        {/* 1. Mobile Video Hero — bare 1:1 square, full-width, no card */}
+        <div className="relative aspect-square w-full overflow-hidden">
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="metadata"
+            className="absolute inset-0 h-full w-full object-cover"
+          >
+            <source src={MOBILE_VIDEO_SRC} type="video/webm" />
+          </video>
+        </div>
+
+        {/* 2. Mobile Text Content */}
+        <MotionDiv
+          variant="staggerContainer"
+          initial={false}
+          className="mt-6 flex flex-col items-start px-4 text-left"
+        >
+          {/* Typewriter Headline */}
+          <MotionChild
+            variant="fadeUp"
+            className="min-h-[2em] font-heading text-4xl font-extrabold tracking-tight"
+          >
+            <h1>
+              <Typewriter
+                words={HERO_SERVICES_WORDS}
+                colors={SERVICE_COLORS}
+              />
+            </h1>
+          </MotionChild>
+
+          {/* Mobile Subheadline — lebih ringkas */}
+          <MotionChild variant="fadeUp" className="mt-4 max-w-sm">
+            <p className="font-playwrite text-sm leading-relaxed text-muted">
+              Website modern, SEO profesional, dan aplikasi mobile untuk membantu
+              bisnis Anda tampil lebih dipercaya di Google.
+            </p>
+          </MotionChild>
+
+          {/* SEO Cities Typewriter */}
+          <MotionChild variant="fadeUp">
+            <div className="mt-3 flex items-center gap-1.5 text-base font-semibold text-muted">
+              <span>Melayani bisnis di </span>
+              <Typewriter
+                words={SEO_CITIES}
+                colors={CITY_COLORS}
+                className="font-bold"
+                cursorColor="text-emerald-600"
+              />
+            </div>
+          </MotionChild>
+
+          {/* CTA Buttons — full-width di mobile */}
+          <MotionChild variant="fadeUp" className="mt-6 flex w-full flex-col gap-3">
+            <a
+              href={WA_LINK}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex h-12 w-full items-center justify-center gap-2 rounded-full bg-green-500 px-6 text-sm font-medium text-white shadow-sm transition hover:bg-green-600 active:scale-[0.98]"
+            >
+              <FaWhatsapp className="text-base" />
+              <span>Contact via Whatsapp</span>
+            </a>
+            <Link
+              href="#services"
+              className="inline-flex h-12 w-full items-center justify-center rounded-full bg-slate-900 px-6 text-sm font-semibold text-white shadow-md transition hover:bg-slate-800 active:scale-[0.98]"
+            >
+              Lihat Layanan Kami
+            </Link>
+          </MotionChild>
+        </MotionDiv>
+      </div>
+
+      {/* ─── DESKTOP LAYOUT (≥ lg) — TIDAK BERUBAH ─────────────────────────── */}
+      <div className="mx-auto hidden min-h-[85vh] max-w-6xl flex-col justify-center px-4 py-16 sm:px-6 lg:flex lg:py-24">
         <div className="grid grid-cols-1 items-center gap-8 lg:grid-cols-12 lg:gap-x-16 lg:gap-y-8">
           <MotionDiv
             variant="staggerContainer"
@@ -183,7 +270,7 @@ export function Hero() {
                 />
               </div>
 
-              {/* Floating Tech Badges (Maksimal 4 badge bergerak bersamaan) */}
+              {/* Floating Tech Badges */}
               <motion.div
                 animate={shouldReduceMotion ? undefined : { y: [0, -6, 0] }}
                 transition={

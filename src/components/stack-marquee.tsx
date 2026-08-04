@@ -97,17 +97,23 @@ function MarqueeRow({
   direction = 'left',
   isPaused,
   onHoverCard,
+  mobile = false,
 }: {
   items: StackItem[];
   reverseDelay?: boolean;
   direction?: 'left' | 'right';
   isPaused: boolean;
   onHoverCard: (hovered: boolean) => void;
+  mobile?: boolean;
 }) {
   const [hoveredIdx, setHoveredIdx] = useState<number | null>(null);
   const duplicated = [...items, ...items, ...items, ...items];
   const animationClass =
-    direction === 'right' ? 'animate-marquee-reverse' : 'animate-marquee';
+    direction === 'right'
+      ? 'animate-marquee-reverse'
+      : mobile
+        ? 'animate-marquee-mobile'
+        : 'animate-marquee';
 
   return (
     <div
@@ -138,7 +144,7 @@ function MarqueeRow({
               setHoveredIdx(next);
               onHoverCard(next !== null);
             }}
-            className={`inline-flex shrink-0 cursor-pointer select-none items-center justify-center gap-2.5 rounded-full border px-6 py-3 text-base font-semibold transition-all duration-500 ease-out ${dynamicStyle}`}
+            className={`inline-flex shrink-0 cursor-pointer select-none items-center justify-center gap-1.5 rounded-full border px-3 py-1.5 text-xs font-semibold transition-all duration-500 ease-out sm:gap-2.5 sm:px-6 sm:py-3 sm:text-base ${dynamicStyle}`}
           >
             <StackIcon name={item.name} />
             <span>{item.name}</span>
@@ -163,19 +169,24 @@ export function StackMarquee() {
     >
       <div className="pointer-events-none absolute inset-y-0 left-0 z-20 w-24 bg-gradient-to-r from-slate-50 to-transparent sm:w-36" />
       <div className="pointer-events-none absolute inset-y-0 right-0 z-20 w-24 bg-gradient-to-l from-slate-50 to-transparent sm:w-36" />
-      <div className="flex flex-col gap-5">
+      <div className="flex flex-col gap-3 md:gap-5">
+        {/* Row 1: visible on all screens */}
         <MarqueeRow
           items={STACK_ITEMS_ROW_1}
           direction="right"
           isPaused={isPaused}
           onHoverCard={setIsPaused}
+          mobile
         />
-        <MarqueeRow
-          items={STACK_ITEMS_ROW_2}
-          reverseDelay
-          isPaused={isPaused}
-          onHoverCard={setIsPaused}
-        />
+        {/* Row 2: only on md+ to avoid visual overload on small screens */}
+        <div className="hidden md:block">
+          <MarqueeRow
+            items={STACK_ITEMS_ROW_2}
+            reverseDelay
+            isPaused={isPaused}
+            onHoverCard={setIsPaused}
+          />
+        </div>
       </div>
     </MotionSection>
   );

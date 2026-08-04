@@ -39,11 +39,16 @@ export function PortfolioSection() {
         </MotionDiv>
 
         {/* Horizontal scroll / snap carousel */}
-        <div className="mt-12 -mx-4 flex overflow-x-auto snap-x snap-mandatory gap-6 px-4 pb-6 pt-2 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden sm:-mx-6 sm:px-6">
+        <div className="mt-12 -mx-4 flex overflow-x-auto snap-x snap-mandatory scroll-px-4 gap-4 px-4 pb-6 pt-2 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden sm:-mx-6 sm:scroll-px-6 sm:gap-6 sm:px-6">
           {projects.map((project) => (
             <PortfolioPreviewCard key={project.slug} item={project} />
           ))}
         </div>
+
+        {/* Mobile swipe indicator */}
+        <p className="mt-2 text-center text-xs text-slate-400 md:hidden">
+          Geser untuk melihat project lainnya →
+        </p>
 
         <MotionDiv
           variant="fadeUp"
