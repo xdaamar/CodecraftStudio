@@ -19,6 +19,7 @@ import {
   STACK_ITEMS_ROW_2,
   type StackItem,
 } from '@/lib/constants';
+import { MotionSection } from '@/components/motion/motion-wrapper';
 
 function StackIcon({ name }: { name: string }) {
   switch (name) {
@@ -152,9 +153,10 @@ export function StackMarquee() {
   const [isPaused, setIsPaused] = useState(false);
 
   return (
-    <section
+    <MotionSection
       id="tech-stack"
       aria-label="Tech Stack"
+      variant="fadeUp"
       className="relative w-full overflow-hidden border-y border-slate-200/70 bg-slate-50 py-12"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
@@ -175,6 +177,6 @@ export function StackMarquee() {
           onHoverCard={setIsPaused}
         />
       </div>
-    </section>
+    </MotionSection>
   );
 }

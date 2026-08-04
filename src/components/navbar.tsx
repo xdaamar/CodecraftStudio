@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { Menu, X } from 'lucide-react';
+import { motion, useReducedMotion } from 'framer-motion';
 
 type NavItem = {
   label: string;
@@ -22,6 +23,7 @@ export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [isHidden, setIsHidden] = useState(false);
   const [lastScrollY, setLastScrollY] = useState(0);
+  const shouldReduceMotion = useReducedMotion();
 
   const toggleMenu = () => setIsOpen((prev) => !prev);
   const closeMenu = () => setIsOpen(false);
@@ -44,10 +46,17 @@ export function Navbar() {
   }, [lastScrollY, isOpen]);
 
   return (
-    <header
-      className={`sticky top-0 z-50 w-full border-b border-slate-200/60 bg-white/85 backdrop-blur-xl shadow-[0_4px_30px_rgba(15,23,42,0.04)] transition-transform duration-300 ease-in-out ${
-        isHidden ? '-translate-y-full' : 'translate-y-0'
-      }`}
+    <motion.header
+      initial={shouldReduceMotion ? false : { y: -24, opacity: 0 }}
+      animate={{
+        y: isHidden ? '-100%' : 0,
+        opacity: isHidden ? 0 : 1,
+      }}
+      transition={{
+        duration: 0.3,
+        ease: 'easeInOut',
+      }}
+      className="sticky top-0 z-50 w-full border-b border-slate-200/60 bg-white/85 backdrop-blur-xl shadow-[0_4px_30px_rgba(15,23,42,0.04)]"
     >
       <nav
         className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6"
@@ -111,6 +120,6 @@ export function Navbar() {
           </ul>
         </div>
       )}
-    </header>
+    </motion.header>
   );
 }

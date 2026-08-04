@@ -10,7 +10,13 @@ import {
   SiMysql,
   SiNodedotjs,
 } from 'react-icons/si';
+import { motion, useReducedMotion } from 'framer-motion';
 import { HERO_SERVICES_WORDS, SEO_CITIES, WA_LINK } from '@/lib/constants';
+import {
+  MotionSection,
+  MotionDiv,
+  MotionChild,
+} from '@/components/motion/motion-wrapper';
 
 const GIF_URL =
   'https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExMXN5aDNtempqeXUzMWRhZnNsbzdvYXZ5MjgxcjI3aWFscjRtejJveSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/d3MLdIYIHup9Q2xG/giphy.gif';
@@ -108,40 +114,65 @@ function Typewriter({
 }
 
 export function Hero() {
+  const shouldReduceMotion = useReducedMotion();
+
   return (
-    <section aria-label="Hero" className="w-full bg-white">
+    <MotionSection
+      id="hero"
+      aria-label="Hero"
+      className="w-full bg-white"
+    >
       <div className="mx-auto flex min-h-[85vh] max-w-6xl flex-col justify-center px-4 py-16 sm:px-6 lg:py-24">
         <div className="grid grid-cols-1 items-center gap-8 lg:grid-cols-12 lg:gap-x-16 lg:gap-y-8">
-          <div className="flex flex-col items-center text-center lg:col-span-7 lg:col-start-1 lg:row-start-1 lg:items-start lg:text-left">
-            <span className="inline-flex items-center rounded-full border border-border-light bg-surface px-3.5 py-1 text-xs font-semibold uppercase tracking-widest text-muted shadow-xs">
-              Software House • Web Development • SEO Agency
-            </span>
+          <MotionDiv
+            variant="staggerContainer"
+            initial={false}
+            className="flex flex-col items-center text-center lg:col-span-7 lg:col-start-1 lg:row-start-1 lg:items-start lg:text-left"
+          >
+            <MotionChild variant="fadeUp">
+              <span className="inline-flex items-center rounded-full border border-border-light bg-surface px-3.5 py-1 text-xs font-semibold uppercase tracking-widest text-muted shadow-xs">
+                Software House • Web Development • SEO Agency
+              </span>
+            </MotionChild>
 
-            <h1 className="mt-6 min-h-[2.2em] font-heading text-3xl font-extrabold tracking-tight sm:min-h-[1.5em] sm:text-5xl lg:text-6xl">
-              <Typewriter
-                words={HERO_SERVICES_WORDS}
-                colors={SERVICE_COLORS}
-              />
-            </h1>
+            <MotionChild
+              variant="fadeUp"
+              className="mt-6 min-h-[2.2em] font-heading text-3xl font-extrabold tracking-tight sm:min-h-[1.5em] sm:text-5xl lg:text-6xl"
+            >
+              <h1>
+                <Typewriter
+                  words={HERO_SERVICES_WORDS}
+                  colors={SERVICE_COLORS}
+                />
+              </h1>
+            </MotionChild>
 
-            <p className="mt-4 max-w-xl font-playwrite text-base leading-relaxed text-muted sm:text-lg">
-              Kami membantu UMKM, perusahaan, lembaga pendidikan, dan startup
-              membangun website cepat, mobile-friendly, SEO-ready, dan mudah
-              dikembangkan untuk kebutuhan bisnis jangka panjang.
-            </p>
+            <MotionChild variant="fadeUp" className="mt-4 max-w-xl">
+              <p className="font-playwrite text-base leading-relaxed text-muted sm:text-lg">
+                Kami membantu UMKM, perusahaan, lembaga pendidikan, dan startup
+                membangun website cepat, mobile-friendly, SEO-ready, dan mudah
+                dikembangkan untuk kebutuhan bisnis jangka panjang.
+              </p>
+            </MotionChild>
 
-            <div className="mt-4 flex items-center gap-1.5 text-base font-semibold text-muted sm:text-lg lg:text-xl">
-              <span>Melayani bisnis di </span>
-              <Typewriter
-                words={SEO_CITIES}
-                colors={CITY_COLORS}
-                className="font-bold"
-                cursorColor="text-emerald-600"
-              />
-            </div>
-          </div>
+            <MotionChild variant="fadeUp">
+              <div className="mt-4 flex items-center gap-1.5 text-base font-semibold text-muted sm:text-lg lg:text-xl">
+                <span>Melayani bisnis di </span>
+                <Typewriter
+                  words={SEO_CITIES}
+                  colors={CITY_COLORS}
+                  className="font-bold"
+                  cursorColor="text-emerald-600"
+                />
+              </div>
+            </MotionChild>
+          </MotionDiv>
 
-          <div className="w-full lg:col-span-5 lg:col-start-8 lg:row-span-2 lg:row-start-1 lg:self-center">
+          <MotionDiv
+            variant="fadeRight"
+            initial={false}
+            className="w-full lg:col-span-5 lg:col-start-8 lg:row-span-2 lg:row-start-1 lg:self-center"
+          >
             <div className="relative flex w-full items-center justify-center py-6">
               <div className="flex w-full items-center justify-center overflow-hidden rounded-[2rem]">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -152,35 +183,87 @@ export function Hero() {
                 />
               </div>
 
-              {/* Floating Tech Badges (Lebih rekat menimpa pinggiran GIF dengan animasi melayang) */}
-              <div className="animate-float absolute top-4 left-4 z-10 inline-flex items-center gap-1.5 rounded-2xl border border-black/5 bg-white px-3.5 py-1.5 text-xs font-semibold text-text shadow-md">
+              {/* Floating Tech Badges (Maksimal 4 badge bergerak bersamaan) */}
+              <motion.div
+                animate={shouldReduceMotion ? undefined : { y: [0, -6, 0] }}
+                transition={
+                  shouldReduceMotion
+                    ? undefined
+                    : { duration: 4.2, repeat: Infinity, ease: 'easeInOut' }
+                }
+                className="absolute top-4 left-4 z-10 inline-flex items-center gap-1.5 rounded-2xl border border-black/5 bg-white px-3.5 py-1.5 text-xs font-semibold text-text shadow-md"
+              >
                 <SiHtml5 className="h-4 w-4 text-[#E34F26]" />
                 <span>HTML5</span>
-              </div>
+              </motion.div>
 
-              <div className="animate-float-delayed absolute bottom-6 right-4 z-10 inline-flex items-center gap-1.5 rounded-2xl border border-black/5 bg-white px-3.5 py-1.5 text-xs font-semibold text-text shadow-md">
+              <motion.div
+                animate={shouldReduceMotion ? undefined : { y: [0, -6, 0] }}
+                transition={
+                  shouldReduceMotion
+                    ? undefined
+                    : {
+                        duration: 5.1,
+                        repeat: Infinity,
+                        ease: 'easeInOut',
+                        delay: 0.5,
+                      }
+                }
+                className="absolute bottom-6 right-4 z-10 inline-flex items-center gap-1.5 rounded-2xl border border-black/5 bg-white px-3.5 py-1.5 text-xs font-semibold text-text shadow-md"
+              >
                 <SiCss className="h-4 w-4 text-[#1572B6]" />
                 <span>CSS3</span>
-              </div>
+              </motion.div>
 
-              <div className="animate-float-reverse absolute top-4 right-4 z-10 inline-flex items-center gap-1.5 rounded-2xl border border-black/5 bg-white px-3.5 py-1.5 text-xs font-semibold text-text shadow-md">
+              <motion.div
+                animate={shouldReduceMotion ? undefined : { y: [0, -6, 0] }}
+                transition={
+                  shouldReduceMotion
+                    ? undefined
+                    : {
+                        duration: 4.7,
+                        repeat: Infinity,
+                        ease: 'easeInOut',
+                        delay: 1,
+                      }
+                }
+                className="absolute top-4 right-4 z-10 inline-flex items-center gap-1.5 rounded-2xl border border-black/5 bg-white px-3.5 py-1.5 text-xs font-semibold text-text shadow-md"
+              >
                 <SiNextdotjs className="h-4 w-4 text-slate-900" />
                 <span>Next.js</span>
-              </div>
+              </motion.div>
 
-              <div className="animate-float absolute bottom-6 left-4 z-10 inline-flex items-center gap-1.5 rounded-2xl border border-black/5 bg-white px-3.5 py-1.5 text-xs font-semibold text-text shadow-md">
+              <motion.div
+                animate={shouldReduceMotion ? undefined : { y: [0, -6, 0] }}
+                transition={
+                  shouldReduceMotion
+                    ? undefined
+                    : {
+                        duration: 5.4,
+                        repeat: Infinity,
+                        ease: 'easeInOut',
+                        delay: 1.5,
+                      }
+                }
+                className="absolute bottom-6 left-4 z-10 inline-flex items-center gap-1.5 rounded-2xl border border-black/5 bg-white px-3.5 py-1.5 text-xs font-semibold text-text shadow-md"
+              >
                 <SiNodedotjs className="h-4 w-4 text-[#5FA04E]" />
                 <span>Node.js</span>
-              </div>
+              </motion.div>
 
-              <div className="animate-float-delayed absolute top-1/2 right-2 z-10 hidden -translate-y-1/2 items-center gap-1.5 rounded-2xl border border-black/5 bg-white px-3.5 py-1.5 text-xs font-semibold text-text shadow-md sm:inline-flex">
+              <div className="absolute top-1/2 right-2 z-10 hidden -translate-y-1/2 items-center gap-1.5 rounded-2xl border border-black/5 bg-white px-3.5 py-1.5 text-xs font-semibold text-text shadow-md sm:inline-flex">
                 <SiMysql className="h-4 w-4 text-[#4479A1]" />
                 <span>MySQL</span>
               </div>
             </div>
-          </div>
+          </MotionDiv>
 
-          <div className="flex w-full flex-col gap-3 sm:w-auto sm:flex-row sm:items-center sm:justify-center lg:col-span-7 lg:col-start-1 lg:row-start-2 lg:justify-start">
+          <MotionDiv
+            variant="fadeUp"
+            initial={false}
+            delay={0.3}
+            className="flex w-full flex-col gap-3 sm:w-auto sm:flex-row sm:items-center sm:justify-center lg:col-span-7 lg:col-start-1 lg:row-start-2 lg:justify-start"
+          >
             <a
               href={WA_LINK}
               target="_blank"
@@ -197,9 +280,9 @@ export function Hero() {
             >
               Lihat Layanan Kami
             </Link>
-          </div>
+          </MotionDiv>
         </div>
       </div>
-    </section>
+    </MotionSection>
   );
 }

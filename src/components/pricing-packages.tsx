@@ -5,16 +5,26 @@ import {
   MAINTENANCE_PACKAGE,
   WA_LINK,
 } from '@/lib/constants';
+import {
+  MotionSection,
+  MotionDiv,
+  MotionChild,
+} from '@/components/motion/motion-wrapper';
 
 export function PricingPackages() {
   return (
-    <section
+    <MotionSection
       id="pricing"
       aria-label="Paket Website"
+      variant="fadeUp"
       className="w-full bg-white py-16 lg:py-24"
     >
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
-        <div className="mx-auto max-w-2xl text-center">
+        <MotionDiv
+          variant="fadeUp"
+          initial={false}
+          className="mx-auto max-w-2xl text-center"
+        >
           <span className="inline-flex items-center rounded-full border border-slate-200/60 bg-white px-3.5 py-1 text-xs font-semibold tracking-wide text-blue-600 uppercase shadow-xs">
             Paket Website
           </span>
@@ -26,9 +36,12 @@ export function PricingPackages() {
             website <span className="font-semibold text-slate-950">gratis 100%</span>{' '}
             tanpa biaya apa pun.
           </p>
-        </div>
+        </MotionDiv>
 
-        <div className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-2 lg:items-stretch">
+        <MotionDiv
+          variant="staggerContainer"
+          className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-2 lg:items-stretch"
+        >
           {PRICING_PACKAGES.map((pkg) => {
             const isCustom = pkg.label === 'Custom Solution';
 
@@ -37,8 +50,9 @@ export function PricingPackages() {
               : 'bg-gradient-to-b from-white to-slate-50 border border-slate-200 shadow-md hover:shadow-lg text-text';
 
             return (
-              <article
+              <MotionChild
                 key={pkg.label}
+                variant={isCustom ? 'scaleIn' : 'fadeUp'}
                 className={`flex flex-col justify-between rounded-[2rem] p-6 transition duration-300 lg:p-8 ${cardStyle}`}
               >
                 <div>
@@ -114,49 +128,51 @@ export function PricingPackages() {
                     <span>Contact via Whatsapp</span>
                   </a>
                 </div>
-              </article>
+              </MotionChild>
             );
           })}
-        </div>
+        </MotionDiv>
 
-        <article className="mt-12 flex flex-col justify-between gap-6 rounded-[2rem] border border-black/5 bg-white p-6 shadow-xs lg:flex-row lg:items-center lg:p-8">
-          <div className="flex flex-col lg:max-w-xs">
-            <span className="text-xs font-semibold uppercase tracking-wider text-accent">
-              Layanan Tambahan
-            </span>
-            <h3 className="mt-1 font-heading text-2xl font-bold tracking-tight text-text">
-              {MAINTENANCE_PACKAGE.title}
-            </h3>
-            <p className="mt-1 text-lg font-bold text-green-600">
-              {MAINTENANCE_PACKAGE.price}
-            </p>
-          </div>
-
-          <div className="flex flex-wrap items-center gap-2.5 lg:max-w-lg">
-            {MAINTENANCE_PACKAGE.features.map((feature) => (
-              <span
-                key={feature}
-                className="inline-flex items-center gap-1.5 rounded-full border border-border-light bg-slate-50 px-3.5 py-1.5 text-xs font-medium text-muted"
-              >
-                <Check className="h-3.5 w-3.5 text-green-500" />
-                <span>{feature}</span>
+        <MotionDiv variant="fadeUp" delay={0.2} className="mt-12">
+          <article className="flex flex-col justify-between gap-6 rounded-[2rem] border border-black/5 bg-white p-6 shadow-xs lg:flex-row lg:items-center lg:p-8">
+            <div className="flex flex-col lg:max-w-xs">
+              <span className="text-xs font-semibold uppercase tracking-wider text-accent">
+                Layanan Tambahan
               </span>
-            ))}
-          </div>
+              <h3 className="mt-1 font-heading text-2xl font-bold tracking-tight text-text">
+                {MAINTENANCE_PACKAGE.title}
+              </h3>
+              <p className="mt-1 text-lg font-bold text-green-600">
+                {MAINTENANCE_PACKAGE.price}
+              </p>
+            </div>
 
-          <div>
-            <a
-              href={WA_LINK}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex h-12 w-full items-center justify-center gap-2 rounded-full bg-green-500 px-6 text-sm font-medium text-white shadow-sm transition hover:bg-green-600 lg:w-auto"
-            >
-              <FaWhatsapp className="text-base" />
-              <span>Contact via Whatsapp</span>
-            </a>
-          </div>
-        </article>
+            <div className="flex flex-wrap items-center gap-2.5 lg:max-w-lg">
+              {MAINTENANCE_PACKAGE.features.map((feature) => (
+                <span
+                  key={feature}
+                  className="inline-flex items-center gap-1.5 rounded-full border border-border-light bg-slate-50 px-3.5 py-1.5 text-xs font-medium text-muted"
+                >
+                  <Check className="h-3.5 w-3.5 text-green-500" />
+                  <span>{feature}</span>
+                </span>
+              ))}
+            </div>
+
+            <div>
+              <a
+                href={WA_LINK}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex h-12 w-full items-center justify-center gap-2 rounded-full bg-green-500 px-6 text-sm font-medium text-white shadow-sm transition hover:bg-green-600 lg:w-auto"
+              >
+                <FaWhatsapp className="text-base" />
+                <span>Contact via Whatsapp</span>
+              </a>
+            </div>
+          </article>
+        </MotionDiv>
       </div>
-    </section>
+    </MotionSection>
   );
 }
