@@ -45,7 +45,7 @@ export function Navbar() {
 
   return (
     <header
-      className={`sticky top-0 z-50 w-full border-b border-border-light bg-surface/90 backdrop-blur-md shadow-md shadow-black/5 transition-transform duration-300 ease-in-out ${
+      className={`sticky top-0 z-50 w-full border-b border-slate-200/60 bg-white/85 backdrop-blur-xl shadow-[0_4px_30px_rgba(15,23,42,0.04)] transition-transform duration-300 ease-in-out ${
         isHidden ? '-translate-y-full' : 'translate-y-0'
       }`}
     >
@@ -66,8 +66,8 @@ export function Navbar() {
               className="h-full w-full object-contain"
             />
           </div>
-          <span className="font-heading text-lg font-bold tracking-tight text-text">
-            Code Craft Studio
+          <span className="font-heading text-lg font-bold tracking-tight text-slate-950">
+            Code Craft <span className="text-blue-600">Studio</span>
           </span>
         </Link>
 
@@ -76,7 +76,7 @@ export function Navbar() {
             <Link
               key={item.label}
               href={item.href}
-              className="text-sm font-medium text-text/80 transition-colors hover:text-accent"
+              className="text-sm font-medium text-slate-700 transition-colors hover:text-slate-950"
             >
               {item.label}
             </Link>
@@ -95,14 +95,14 @@ export function Navbar() {
       </nav>
 
       {isOpen && (
-        <div className="border-t border-border-light bg-surface px-4 py-4 shadow-sm md:hidden">
+        <div className="border-t border-slate-200/60 bg-white px-4 py-4 shadow-sm md:hidden">
           <ul className="flex flex-col gap-2">
             {NAV_LINKS.map((item) => (
               <li key={item.label}>
                 <Link
                   href={item.href}
                   onClick={closeMenu}
-                  className="block rounded-lg px-3 py-2.5 text-base font-medium text-text transition-colors hover:bg-black/5 hover:text-accent"
+                  className="block rounded-lg px-3 py-2.5 text-base font-medium text-slate-700 transition-colors hover:bg-slate-100 hover:text-slate-950"
                 >
                   {item.label}
                 </Link>

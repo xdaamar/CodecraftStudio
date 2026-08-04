@@ -70,7 +70,7 @@ function MarqueeRow({
       {duplicated.map((item, idx) => (
         <div
           key={`${item.name}-${idx}`}
-          className="inline-flex shrink-0 items-center justify-center gap-2.5 rounded-full border border-black/5 bg-white px-6 py-3 text-base font-semibold text-text shadow-2xs"
+          className="inline-flex shrink-0 items-center justify-center gap-2.5 rounded-full border border-slate-200/70 bg-white/95 px-6 py-3 text-base font-semibold text-slate-900 shadow-sm transition-shadow duration-300 hover:shadow-md"
         >
           <StackIcon name={item.name} />
           <span>{item.name}</span>
@@ -83,9 +83,12 @@ function MarqueeRow({
 export function StackMarquee() {
   return (
     <section
+      id="tech-stack"
       aria-label="Tech Stack"
-      className="w-full overflow-hidden border-y border-border-light bg-surface py-10"
+      className="relative w-full overflow-hidden border-y border-slate-200/70 bg-slate-50 py-10"
     >
+      <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-24 bg-gradient-to-r from-slate-50 to-transparent sm:w-36" />
+      <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-24 bg-gradient-to-l from-slate-50 to-transparent sm:w-36" />
       <div className="flex flex-col gap-4">
         <MarqueeRow items={STACK_ITEMS_ROW_1} direction="right" />
         <MarqueeRow items={STACK_ITEMS_ROW_2} reverseDelay />

@@ -39,18 +39,19 @@ export function ServicesSection() {
     <section
       id="services"
       aria-label="Layanan Website"
-      className="w-full border-y border-border-light bg-background py-16 lg:py-24"
+      className="w-full border-y border-slate-200/70 bg-slate-50 py-16 lg:py-24"
     >
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <div className="mx-auto max-w-2xl text-center">
-          <span className="inline-flex items-center rounded-full border border-border-light bg-surface px-3.5 py-1 text-xs font-semibold uppercase tracking-widest text-accent shadow-2xs">
+          <span className="inline-flex items-center rounded-full border border-slate-200/60 bg-white px-3.5 py-1 text-xs font-semibold tracking-wide text-blue-600 uppercase shadow-xs">
             Layanan &amp; Spesialisasi
           </span>
-          <h2 className="mt-4 font-heading text-3xl font-extrabold tracking-tight text-text sm:text-4xl">
-            Solusi Website &amp; Aplikasi Modern untuk Mempercepat Pertumbuhan
+          <h2 className="mt-4 font-heading text-3xl font-extrabold tracking-tight text-slate-950 sm:text-4xl">
+            Solusi Website &amp; Aplikasi Modern untuk{' '}
+            <span className="text-blue-600">Mempercepat Pertumbuhan</span>{' '}
             Bisnis
           </h2>
-          <p className="mt-4 text-base leading-relaxed text-muted sm:text-lg">
+          <p className="mt-4 text-base leading-relaxed text-slate-600 sm:text-lg">
             Setiap website dirancang dengan pendekatan mobile-first, optimasi
             kecepatan tinggi, dan struktur SEO yang siap bersaing di Google.
           </p>
@@ -60,17 +61,17 @@ export function ServicesSection() {
           {SERVICES_ITEMS.map((service, idx) => (
             <article
               key={service.title}
-              className="flex flex-col rounded-[1.5rem] border border-black/5 bg-white p-6 shadow-2xs transition duration-300 hover:-translate-y-1 hover:shadow-md sm:p-8"
+              className="flex flex-col rounded-[1.75rem] border border-slate-200/70 bg-white/90 p-6 shadow-[0_10px_40px_rgba(15,23,42,0.05)] backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_45px_rgba(15,23,42,0.08)] sm:p-8"
             >
               <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-blue-50/80">
                 <ServiceIcon index={idx} />
               </div>
 
-              <h3 className="mt-6 font-heading text-xl font-bold tracking-tight text-text sm:text-2xl">
+              <h3 className="mt-6 font-heading text-xl font-bold tracking-tight text-slate-950 sm:text-2xl">
                 {service.title}
               </h3>
 
-              <p className="mt-3 text-base leading-relaxed text-muted">
+              <p className="mt-3 text-base leading-relaxed text-slate-600">
                 {service.description}
               </p>
             </article>

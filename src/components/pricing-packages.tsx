@@ -11,19 +11,19 @@ export function PricingPackages() {
     <section
       id="pricing"
       aria-label="Paket Website"
-      className="w-full bg-surface py-16 lg:py-24"
+      className="w-full bg-white py-16 lg:py-24"
     >
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <div className="mx-auto max-w-2xl text-center">
-          <span className="inline-flex items-center rounded-full border border-border-light bg-background px-3.5 py-1 text-xs font-semibold uppercase tracking-widest text-accent shadow-2xs">
+          <span className="inline-flex items-center rounded-full border border-slate-200/60 bg-white px-3.5 py-1 text-xs font-semibold tracking-wide text-blue-600 uppercase shadow-xs">
             Paket Website
           </span>
-          <h2 className="mt-4 font-heading text-3xl font-extrabold tracking-tight text-text sm:text-4xl">
+          <h2 className="mt-4 font-heading text-3xl font-extrabold tracking-tight text-slate-950 sm:text-4xl">
             Pilih paket yang paling sesuai dengan kebutuhan bisnis Anda.
           </h2>
-          <p className="mt-4 text-base leading-relaxed text-muted sm:text-lg">
+          <p className="mt-4 text-base leading-relaxed text-slate-600 sm:text-lg">
             Harga berikut adalah estimasi awal. Konsultasi dan diskusi kebutuhan
-            website <span className="font-semibold text-text">gratis 100%</span>{' '}
+            website <span className="font-semibold text-slate-950">gratis 100%</span>{' '}
             tanpa biaya apa pun.
           </p>
         </div>
