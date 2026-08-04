@@ -1,42 +1,130 @@
+export const WA_LINK = 'https://wa.me/6287872926689';
+
 export type StackItem = {
   name: string;
-  className: string;
+  className?: string;
 };
 
+export const STACK_ITEMS_ROW_1: StackItem[] = [
+  { name: 'Next.js' },
+  { name: 'TypeScript' },
+  { name: 'Tailwind CSS' },
+  { name: 'React' },
+  { name: 'Flutter' },
+  { name: 'Node.js' },
+];
+
+export const STACK_ITEMS_ROW_2: StackItem[] = [
+  { name: 'PostgreSQL' },
+  { name: 'Supabase' },
+  { name: 'Vercel' },
+  { name: 'SEO Friendly' },
+  { name: 'Responsive Design' },
+  { name: 'Google Search Ready' },
+];
+
 export const STACK_ITEMS: StackItem[] = [
-  { name: 'Next.js', className: 'bg-blue-50 text-blue-700 border-blue-200' },
+  ...STACK_ITEMS_ROW_1,
+  ...STACK_ITEMS_ROW_2,
+];
+
+export type ServiceItem = {
+  title: string;
+  description: string;
+};
+
+export const SERVICES_ITEMS: ServiceItem[] = [
   {
-    name: 'TypeScript',
-    className: 'bg-emerald-50 text-emerald-700 border-emerald-200',
+    title: 'Landing Page Bisnis',
+    description:
+      'Cocok untuk promosi produk, jasa, event, atau kampanye iklan digital dengan fokus pada tampilan modern dan conversion.',
   },
   {
-    name: 'Tailwind CSS',
-    className: 'bg-violet-50 text-violet-700 border-violet-200',
-  },
-  { name: 'React', className: 'bg-orange-50 text-orange-700 border-orange-200' },
-  { name: 'Flutter', className: 'bg-cyan-50 text-cyan-700 border-cyan-200' },
-  { name: 'Supabase', className: 'bg-blue-50 text-blue-700 border-blue-200' },
-  {
-    name: 'Node.js',
-    className: 'bg-emerald-50 text-emerald-700 border-emerald-200',
+    title: 'Company Profile UMKM',
+    description:
+      'Menampilkan profil usaha, layanan, galeri, lokasi, dan kontak WhatsApp secara profesional agar bisnis lebih dipercaya pelanggan.',
   },
   {
-    name: 'PostgreSQL',
-    className: 'bg-violet-50 text-violet-700 border-violet-200',
+    title: 'Website Kursus & Pendidikan',
+    description:
+      'Menyediakan informasi program belajar, jadwal, galeri kegiatan, dan pendaftaran yang mudah diakses calon siswa maupun orang tua.',
   },
   {
-    name: 'Vercel',
-    className: 'bg-orange-50 text-orange-700 border-orange-200',
+    title: 'Website Produk Digital / Startup',
+    description:
+      'Landing page modern untuk SaaS, aplikasi, atau produk digital dengan fokus pada performa, SEO, dan pengalaman pengguna.',
   },
   {
-    name: 'SEO Friendly',
-    className: 'bg-cyan-50 text-cyan-700 border-cyan-200',
-  },
-  {
-    name: 'Responsive Design',
-    className: 'bg-blue-50 text-blue-700 border-blue-200',
+    title: 'Optimasi SEO Dasar',
+    description:
+      'Meliputi struktur heading yang rapi, metadata SEO, sitemap, optimasi kecepatan, dan dasar optimasi pencarian lokal Google.',
   },
 ];
+
+export type PricingPackageItem = {
+  label: string;
+  badge?: string;
+  price: string;
+  features: string[];
+  highlight?: boolean;
+};
+
+export const PRICING_PACKAGES: PricingPackageItem[] = [
+  {
+    label: 'Starter UMKM',
+    price: 'Mulai dari Rp500 ribuan',
+    features: [
+      'Landing page profesional',
+      'Desain mobile-friendly',
+      'Tombol WhatsApp langsung',
+      'Optimasi kecepatan dasar',
+      'Gratis konsultasi 100%',
+      'Gratis domain',
+    ],
+  },
+  {
+    label: 'Business Profile',
+    badge: 'Paling Populer',
+    price: 'Mulai dari Rp1 jutaan',
+    highlight: true,
+    features: [
+      'Multi halaman',
+      'Company profile lengkap',
+      'Galeri & layanan',
+      'SEO dasar Google',
+      'Form / WhatsApp inquiry',
+      'Optimasi performa mobile & desktop',
+      'Gratis konsultasi 100%',
+      'Gratis domain',
+    ],
+  },
+  {
+    label: 'SEO Growth',
+    price: 'Mulai dari Rp2 jutaan',
+    features: [
+      'Website custom modern',
+      'Struktur SEO lokal',
+      'Blog artikel SEO',
+      'Optimasi Core Web Vitals',
+      'Integrasi Google Search Console ready',
+      'Pendampingan publikasi awal',
+      'Gratis konsultasi 100%',
+      'Gratis domain',
+    ],
+  },
+];
+
+export const MAINTENANCE_PACKAGE = {
+  title: 'Maintenance & Perawatan Website',
+  price: 'Mulai dari Rp50.000/bulan',
+  features: [
+    'update konten ringan',
+    'backup berkala',
+    'pengecekan link rusak',
+    'monitoring performa dasar',
+    'bantuan teknis via WhatsApp',
+  ],
+};
 
 export type BenefitItem = {
   title: string;

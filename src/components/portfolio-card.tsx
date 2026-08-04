@@ -1,5 +1,6 @@
 import Image from 'next/image';
-import { type PortfolioItem } from '@/lib/constants';
+import { FaWhatsapp } from 'react-icons/fa';
+import { type PortfolioItem, WA_LINK } from '@/lib/constants';
 
 type PortfolioCardProps = {
   item: PortfolioItem;
@@ -65,14 +66,23 @@ export function PortfolioCard({ item }: PortfolioCardProps) {
           ))}
         </div>
 
-        <div className="mt-8">
+        <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
           <a
             href={item.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex w-full items-center justify-center rounded-full bg-slate-900 px-5 py-3 text-sm font-medium text-white shadow-sm transition hover:bg-slate-800 sm:w-auto"
+            className="inline-flex w-full items-center justify-center rounded-full border border-border-light bg-surface px-5 py-3 text-sm font-medium text-text transition hover:border-black/10 hover:bg-black/5 sm:w-auto"
           >
             Kunjungi Situs
+          </a>
+          <a
+            href={WA_LINK}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-green-500 px-5 py-3 text-sm font-medium text-white shadow-sm transition hover:bg-green-600 sm:w-auto"
+          >
+            <FaWhatsapp className="text-base" />
+            <span>Contact via Whatsapp</span>
           </a>
         </div>
       </div>

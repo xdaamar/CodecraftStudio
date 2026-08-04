@@ -1,9 +1,9 @@
 import Link from 'next/link';
+import { FaWhatsapp } from 'react-icons/fa';
+import { WA_LINK } from '@/lib/constants';
 
 const GIF_URL =
   'https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExMXN5aDNtempqeXUzMWRhZnNsbzdvYXZ5MjgxcjI3aWFscjRtejJveSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/d3MLdIYIHup9Q2xG/giphy.gif';
-
-const WA_LINK = 'https://wa.me/6287872926689';
 
 export function Hero() {
   return (
@@ -54,9 +54,10 @@ export function Hero() {
               href={WA_LINK}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex h-12 w-full items-center justify-center rounded-full bg-accent px-8 text-sm font-semibold text-white shadow-sm transition hover:bg-accent-hover sm:w-auto"
+              className="inline-flex h-12 w-full items-center justify-center gap-2 rounded-full bg-green-500 px-8 text-sm font-medium text-white shadow-sm transition hover:bg-green-600 sm:w-auto"
             >
-              Konsultasi via WhatsApp
+              <FaWhatsapp className="text-base" />
+              <span>Contact via Whatsapp</span>
             </a>
           </div>
         </div>
