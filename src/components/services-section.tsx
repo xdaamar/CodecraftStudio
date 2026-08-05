@@ -1,3 +1,7 @@
+'use client';
+
+import { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import {
   Building2,
   Rocket,
@@ -40,12 +44,14 @@ function ServiceIcon({ index }: { index: number }) {
 }
 
 export function ServicesSection() {
+  const [openAccordion, setOpenAccordion] = useState<number | null>(null);
+
   return (
     <MotionSection
       id="services"
       aria-label="Layanan Website"
       variant="fadeUp"
-      className="w-full border-y border-slate-200/70 bg-slate-50 py-16 lg:py-24"
+      className="w-full border-y border-slate-200/70 bg-gradient-to-b from-orange-50 via-white to-blue-50 py-16 lg:py-24"
     >
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <MotionDiv
@@ -67,9 +73,62 @@ export function ServicesSection() {
           </p>
         </MotionDiv>
 
+        {/* MOBILE LAYOUT: Accordion (<768px) */}
+        <div className="mt-8 flex flex-col gap-3 md:hidden">
+          {SERVICES_ITEMS.map((service, idx) => {
+            const isOpen = openAccordion === idx;
+            return (
+              <div
+                key={service.title}
+                className="flex flex-col overflow-hidden rounded-[1.5rem] border border-slate-200/70 bg-white/90 shadow-sm transition-shadow duration-300"
+              >
+                <button
+                  type="button"
+                  onClick={() => setOpenAccordion(isOpen ? null : idx)}
+                  className="flex w-full items-center justify-between p-5 text-left"
+                >
+                  <div className="flex items-center gap-3">
+                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-blue-50/80">
+                      <ServiceIcon index={idx} />
+                    </div>
+                    <span className="font-heading text-lg font-bold text-slate-950">
+                      {service.title}
+                    </span>
+                  </div>
+                  <motion.div
+                    animate={{ rotate: isOpen ? 180 : 0 }}
+                    transition={{ type: 'spring', stiffness: 200, damping: 20 }}
+                  >
+                    <svg className="h-5 w-5 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </motion.div>
+                </button>
+                <AnimatePresence initial={false}>
+                  {isOpen && (
+                    <motion.div
+                      initial={{ height: 0, opacity: 0, y: -8 }}
+                      animate={{ height: 'auto', opacity: 1, y: 0 }}
+                      exit={{ height: 0, opacity: 0, y: -8 }}
+                      transition={{ type: 'spring', stiffness: 120, damping: 20 }}
+                    >
+                      <div className="px-5 pb-5 pt-1">
+                        <p className="text-sm leading-relaxed text-slate-600">
+                          {service.description}
+                        </p>
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
+            );
+          })}
+        </div>
+
+        {/* DESKTOP LAYOUT: Grid (>=768px) */}
         <MotionDiv
           variant="staggerContainer"
-          className="mt-12 grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-6"
+          className="mt-12 hidden grid-cols-1 gap-4 md:grid md:grid-cols-2 md:gap-6"
         >
           {SERVICES_ITEMS.map((service, idx) => (
             <MotionChild

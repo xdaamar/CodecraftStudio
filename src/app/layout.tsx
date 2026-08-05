@@ -1,17 +1,17 @@
 import type { Metadata } from 'next';
-import { Manrope, Inter } from 'next/font/google';
+import { Sora, Plus_Jakarta_Sans } from 'next/font/google';
 import localFont from 'next/font/local';
 import { Navbar } from '@/components/navbar';
 import './globals.css';
 
-const manrope = Manrope({
-  variable: '--font-manrope',
+const sora = Sora({
+  variable: '--font-heading',
   subsets: ['latin'],
   weight: ['400', '500', "600", '700', '800'],
 });
 
-const inter = Inter({
-  variable: '--font-inter',
+const jakarta = Plus_Jakarta_Sans({
+  variable: '--font-body',
   subsets: ['latin'],
   weight: ['400', '500', '600', '700'],
 });
@@ -37,7 +37,7 @@ export default function RootLayout({
   return (
     <html
       lang="id"
-      className={`${manrope.variable} ${inter.variable} ${playwrite.variable} min-h-screen antialiased`}
+      className={`${sora.variable} ${jakarta.variable} ${playwrite.variable} min-h-screen antialiased`}
     >
       <body className="flex min-h-screen flex-col bg-background font-sans text-text">
         <Navbar />

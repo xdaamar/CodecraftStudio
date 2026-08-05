@@ -3,15 +3,25 @@
 :root {
   --background: #F8FAFC;
   --surface: #FFFFFF;
-  --surface-muted: #F1F5F9;
-  --surface-soft: #EEF2FF;
+
+  --surface-blue: #EEF4FF;
+  --surface-emerald: #ECFDF5;
+  --surface-violet: #F5F3FF;
+  --surface-peach: #FFF7ED;
 
   --text: #0F172A;
   --muted: #475569;
 
+  --accent-blue: #2563EB;
+  --accent-emerald: #059669;
+  --accent-violet: #7C3AED;
+  --accent-peach: #EA580C;
+
+  /* Legacy aliases to avoid breaking old components temporarily */
+  --surface-muted: #F1F5F9;
+  --surface-soft: #EEF2FF;
   --accent: #2563EB;
   --accent-hover: #1D4ED8;
-  --accent-emerald: #059669;
 
   --border: rgba(15, 23, 42, 0.06);
   --border-light: rgba(15, 23, 42, 0.06);
@@ -30,8 +40,8 @@
   --color-accent-emerald: var(--accent-emerald);
   --color-border: var(--border);
   --color-border-light: var(--border-light);
-  --font-heading: var(--font-manrope), sans-serif;
-  --font-sans: var(--font-inter), sans-serif;
+  --font-heading: var(--font-heading), sans-serif;
+  --font-sans: var(--font-body), sans-serif;
   --font-playwrite: var(--font-playwrite), cursive;
   --animate-marquee: marquee 35s linear infinite;
 }
@@ -152,7 +162,12 @@ h1 {
 
 @media (max-width: 768px) {
   h1 {
-    line-height: 1.1;
+    line-height: 1.08;
+    letter-spacing: -0.03em;
+  }
+
+  h2 {
+    line-height: 1.12;
     letter-spacing: -0.025em;
   }
 

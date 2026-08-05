@@ -1,10 +1,52 @@
+'use client';
+
+import { useRef } from 'react';
+import { useScroll, useTransform, motion } from 'framer-motion';
 import { Check, ShieldCheck } from 'lucide-react';
-import { UMKM_BENEFITS } from '@/lib/constants';
+import { UMKM_BENEFITS, type BenefitItem } from '@/lib/constants';
 import {
   MotionSection,
   MotionDiv,
   MotionChild,
 } from '@/components/motion/motion-wrapper';
+
+function StackedBenefitCard({ benefit, index }: { benefit: BenefitItem; index: number }) {
+  const containerRef = useRef<HTMLDivElement>(null);
+  
+  // Only apply scroll animations on mobile screens (where it stacks)
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ['start end', 'start start'],
+  });
+
+  // Calculate transform values based on scroll progression
+  // When card reaches top, it scales down, fades slightly, and moves up.
+  // Note: These transforms will only be active if we are on a small screen
+  // due to CSS media query overrides, but we calculate them anyway.
+  const scale = useTransform(scrollYProgress, [0, 0.8, 1], [1, 1, 0.97]);
+  const opacity = useTransform(scrollYProgress, [0, 0.8, 1], [1, 1, 0.85]);
+  const y = useTransform(scrollYProgress, [0, 0.8, 1], [0, 0, -24]);
+
+  return (
+    <motion.div
+      ref={containerRef}
+      style={{ scale, opacity, y, top: `calc(6rem + ${index * 1.5}rem)` }}
+      className="sticky flex flex-col rounded-[2rem] border border-white/60 bg-white/90 p-8 shadow-[0_10px_40px_rgba(15,23,42,0.05)] backdrop-blur-sm transition-shadow duration-300 sm:relative sm:top-auto sm:!scale-100 sm:!opacity-100 sm:!translate-y-0 sm:hover:-translate-y-1 sm:hover:shadow-[0_20px_45px_rgba(15,23,42,0.08)]"
+    >
+      <div className="flex items-center gap-3">
+        <span className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-blue-50 text-blue-600">
+          <Check className="h-5 w-5" />
+        </span>
+        <h3 className="font-heading text-xl font-bold tracking-tight text-slate-950 sm:text-2xl">
+          {benefit.title}
+        </h3>
+      </div>
+      <p className="mt-4 text-base leading-relaxed text-slate-600">
+        {benefit.description}
+      </p>
+    </motion.div>
+  );
+}
 
 export function UMKMBenefits() {
   const smallCards = UMKM_BENEFITS.filter((item) => !item.fullWidth);
@@ -15,7 +57,7 @@ export function UMKMBenefits() {
       id="benefits"
       aria-label="Keunggulan Layanan"
       variant="fadeUp"
-      className="w-full bg-gradient-to-b from-slate-50 to-slate-100/70 py-16 lg:py-24"
+      className="w-full bg-gradient-to-b from-emerald-50 via-white to-slate-50 py-16 lg:py-24"
     >
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <MotionDiv
@@ -32,31 +74,11 @@ export function UMKMBenefits() {
           </h2>
         </MotionDiv>
 
-        <MotionDiv
-          variant="staggerContainer"
-          initial={false}
-          className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:mt-16 lg:gap-8"
-        >
-          {smallCards.map((benefit) => (
-            <MotionChild
-              key={benefit.title}
-              variant="scaleIn"
-              className="flex flex-col rounded-[2rem] border border-white/60 bg-white/90 p-8 shadow-[0_10px_40px_rgba(15,23,42,0.05)] backdrop-blur-sm transition duration-300 hover:-translate-y-1 hover:shadow-[0_20px_45px_rgba(15,23,42,0.08)]"
-            >
-              <div className="flex items-center gap-3">
-                <span className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-blue-50 text-blue-600">
-                  <Check className="h-5 w-5" />
-                </span>
-                <h3 className="font-heading text-xl font-bold tracking-tight text-slate-950 sm:text-2xl">
-                  {benefit.title}
-                </h3>
-              </div>
-              <p className="mt-4 text-base leading-relaxed text-slate-600">
-                {benefit.description}
-              </p>
-            </MotionChild>
+        <div className="mt-12 flex flex-col gap-6 sm:grid sm:grid-cols-2 lg:mt-16 lg:gap-8">
+          {smallCards.map((benefit, idx) => (
+            <StackedBenefitCard key={benefit.title} benefit={benefit} index={idx} />
           ))}
-        </MotionDiv>
+        </div>
 
         {fullWidthCard && (
           <MotionDiv

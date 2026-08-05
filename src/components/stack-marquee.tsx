@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { motion } from 'framer-motion';
 import {
   SiNextdotjs,
   SiTypescript,
@@ -17,9 +18,10 @@ import { FaSearch, FaMobileAlt } from 'react-icons/fa';
 import {
   STACK_ITEMS_ROW_1,
   STACK_ITEMS_ROW_2,
+  STACK_ITEMS,
   type StackItem,
 } from '@/lib/constants';
-import { MotionSection } from '@/components/motion/motion-wrapper';
+import { MotionSection, MotionChild } from '@/components/motion/motion-wrapper';
 
 function StackIcon({ name }: { name: string }) {
   switch (name) {
@@ -163,29 +165,45 @@ export function StackMarquee() {
       id="tech-stack"
       aria-label="Tech Stack"
       variant="fadeUp"
-      className="relative w-full overflow-hidden border-y border-slate-200/70 bg-slate-50 py-12"
+      className="relative w-full overflow-hidden border-y border-slate-200/70 bg-gradient-to-r from-blue-50 via-indigo-50 to-violet-50 py-12"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >
       <div className="pointer-events-none absolute inset-y-0 left-0 z-20 w-24 bg-gradient-to-r from-slate-50 to-transparent sm:w-36" />
       <div className="pointer-events-none absolute inset-y-0 right-0 z-20 w-24 bg-gradient-to-l from-slate-50 to-transparent sm:w-36" />
       <div className="flex flex-col gap-3 md:gap-5">
-        {/* Row 1: visible on all screens */}
-        <MarqueeRow
-          items={STACK_ITEMS_ROW_1}
-          direction="right"
-          isPaused={isPaused}
-          onHoverCard={setIsPaused}
-          mobile
-        />
-        {/* Row 2: visible on all screens */}
-        <MarqueeRow
-          items={STACK_ITEMS_ROW_2}
-          reverseDelay
-          isPaused={isPaused}
-          onHoverCard={setIsPaused}
-          mobile
-        />
+        {/* MOBILE LAYOUT: Swipeable Chips (<768px) */}
+        <div className="md:hidden flex overflow-x-auto snap-x snap-mandatory scroll-px-4 gap-3 px-4 py-2 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
+          {STACK_ITEMS.map((item, idx) => (
+            <motion.div
+              key={item.name}
+              initial={{ opacity: 0.7, scale: 0.96 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: false, amount: 0.8 }}
+              className="flex min-w-[140px] snap-center items-center justify-center rounded-2xl border border-blue-100 bg-white/90 py-3 shadow-sm"
+            >
+              <span className="font-heading text-sm font-semibold tracking-wide text-slate-800">
+                {item.name}
+              </span>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* DESKTOP LAYOUT: 2-Row Marquee (>=768px) */}
+        <div className="hidden flex-col gap-5 md:flex">
+          <MarqueeRow
+            items={STACK_ITEMS_ROW_1}
+            direction="right"
+            isPaused={isPaused}
+            onHoverCard={setIsPaused}
+          />
+          <MarqueeRow
+            items={STACK_ITEMS_ROW_2}
+            reverseDelay
+            isPaused={isPaused}
+            onHoverCard={setIsPaused}
+          />
+        </div>
       </div>
     </MotionSection>
   );
