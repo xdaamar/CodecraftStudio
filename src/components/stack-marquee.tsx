@@ -178,15 +178,14 @@ export function StackMarquee() {
           onHoverCard={setIsPaused}
           mobile
         />
-        {/* Row 2: only on md+ to avoid visual overload on small screens */}
-        <div className="hidden md:block">
-          <MarqueeRow
-            items={STACK_ITEMS_ROW_2}
-            reverseDelay
-            isPaused={isPaused}
-            onHoverCard={setIsPaused}
-          />
-        </div>
+        {/* Row 2: visible on all screens */}
+        <MarqueeRow
+          items={STACK_ITEMS_ROW_2}
+          reverseDelay
+          isPaused={isPaused}
+          onHoverCard={setIsPaused}
+          mobile
+        />
       </div>
     </MotionSection>
   );
