@@ -81,12 +81,12 @@ export function Navbar() {
             onClick={closeMenu}
             className="flex items-center gap-2.5 transition-opacity hover:opacity-90"
           >
-            <div className="h-8 w-8 shrink-0 overflow-hidden rounded-lg">
+            <div className="h-8 w-auto shrink-0 overflow-hidden">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src="https://cdn-icons-png.flaticon.com/512/1055/1055687.png"
+                src="/images/navbar_logo.webp"
                 alt="Code Craft Studio software house icon"
-                className="h-full w-full object-contain"
+                className="h-full w-auto object-contain"
               />
             </div>
             <span className="font-heading text-lg font-bold tracking-tight text-slate-950">
