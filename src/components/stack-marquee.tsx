@@ -20,7 +20,6 @@ import {
   STACK_ITEMS_ROW_2,
   type StackItem,
 } from '@/lib/constants';
-import { MotionSection, MotionChild } from '@/components/motion/motion-wrapper';
 
 function StackIcon({ name }: { name: string }) {
   switch (name) {
@@ -99,6 +98,7 @@ function MarqueeRow({
   isPaused,
   onHoverCard,
   mobile = false,
+  foregroundStyle = '',
 }: {
   items: StackItem[];
   reverseDelay?: boolean;
@@ -106,6 +106,7 @@ function MarqueeRow({
   isPaused: boolean;
   onHoverCard: (hovered: boolean) => void;
   mobile?: boolean;
+  foregroundStyle?: string;
 }) {
   const [hoveredIdx, setHoveredIdx] = useState<number | null>(null);
   const duplicated = [...items, ...items, ...items, ...items];
@@ -145,7 +146,7 @@ function MarqueeRow({
               setHoveredIdx(next);
               onHoverCard(next !== null);
             }}
-            className={`inline-flex shrink-0 cursor-pointer select-none items-center justify-center gap-1.5 rounded-full border px-3 py-1.5 text-xs font-semibold transition-all duration-500 ease-out sm:gap-2.5 sm:px-6 sm:py-3 sm:text-base ${dynamicStyle}`}
+            className={`inline-flex shrink-0 cursor-pointer select-none items-center justify-center gap-1.5 rounded-full border px-3 py-1.5 text-xs font-semibold transition-all duration-500 ease-out sm:gap-2.5 sm:px-6 sm:py-3 sm:text-base ${dynamicStyle} ${foregroundStyle}`}
           >
             <StackIcon name={item.name} />
             <span>{item.name}</span>
@@ -160,10 +161,9 @@ export function StackMarquee() {
   const [isPaused, setIsPaused] = useState(false);
 
   return (
-    <MotionSection
+    <section
       id="tech-stack"
       aria-label="Tech Stack"
-      variant="fadeUp"
       className="relative w-full overflow-hidden border-y border-slate-200/70 bg-gradient-to-r from-blue-50 via-indigo-50 to-violet-50 py-12"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
@@ -171,21 +171,36 @@ export function StackMarquee() {
       <div className="pointer-events-none absolute inset-y-0 left-0 z-20 w-24 bg-gradient-to-r from-slate-50 to-transparent sm:w-36" />
       <div className="pointer-events-none absolute inset-y-0 right-0 z-20 w-24 bg-gradient-to-l from-slate-50 to-transparent sm:w-36" />
       <div className="flex flex-col gap-3 md:gap-5">
-        <MarqueeRow
-          items={STACK_ITEMS_ROW_1}
-          direction="right"
-          isPaused={isPaused}
-          onHoverCard={setIsPaused}
-          mobile
-        />
-        <MarqueeRow
-          items={STACK_ITEMS_ROW_2}
-          reverseDelay
-          isPaused={isPaused}
-          onHoverCard={setIsPaused}
-          mobile
-        />
+        <motion.div
+          initial={{ opacity: 0, x: 40 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ amount: 0.35 }}
+          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+        >
+          <MarqueeRow
+            items={STACK_ITEMS_ROW_1}
+            direction="right"
+            isPaused={isPaused}
+            onHoverCard={setIsPaused}
+            mobile
+          />
+        </motion.div>
+        
+        <motion.div
+          initial={{ opacity: 0, x: -40 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ amount: 0.35 }}
+          transition={{ duration: 0.7, delay: 0.12, ease: [0.22, 1, 0.36, 1] }}
+        >
+          <MarqueeRow
+            items={STACK_ITEMS_ROW_2}
+            reverseDelay
+            isPaused={isPaused}
+            onHoverCard={setIsPaused}
+            mobile
+          />
+        </motion.div>
       </div>
-    </MotionSection>
+    </section>
   );
 }

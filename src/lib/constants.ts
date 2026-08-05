@@ -133,7 +133,7 @@ export const PRICING_PACKAGES: PricingPackageItem[] = [
   },
   {
     label: 'Custom Solution',
-    price: 'Konsultasi sesuai kebutuhan proyek',
+    price: 'Konsultasi sesuai kebutuhan',
     features: [
       'Sistem Web Custom',
       'Aplikasi Mobile Flutter',

@@ -2,6 +2,8 @@ import dynamic from 'next/dynamic';
 import { Hero } from '@/components/hero';
 import { StackMarquee } from '@/components/stack-marquee';
 import { UMKMBenefits } from '@/components/umkm-benefits';
+import { DesktopCursorGlow } from '@/components/desktop-cursor-glow';
+import { ScrollProgressBar } from '@/components/scroll-progress-bar';
 
 function SectionSkeleton({
   heightClass = 'min-h-[500px]',
@@ -43,13 +45,17 @@ const PricingPackages = dynamic(
 
 export default function Home() {
   return (
-    <main className="flex flex-1 flex-col">
-      <Hero />
-      <StackMarquee />
-      <UMKMBenefits />
-      <PortfolioSection />
-      <ServicesSection />
-      <PricingPackages />
-    </main>
+    <>
+      <ScrollProgressBar />
+      <DesktopCursorGlow />
+      <main className="bg-background overflow-x-hidden">
+        <Hero />
+        <StackMarquee />
+        <UMKMBenefits />
+        <PortfolioSection />
+        <ServicesSection />
+        <PricingPackages />
+      </main>
+    </>
   );
 }

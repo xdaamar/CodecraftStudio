@@ -54,6 +54,7 @@
   from {
     transform: translateX(0);
   }
+
   to {
     transform: translateX(-50%);
   }
@@ -67,6 +68,7 @@
   from {
     transform: translateX(0);
   }
+
   to {
     transform: translateX(-50%);
   }
@@ -80,6 +82,7 @@
   from {
     transform: translateX(-50%);
   }
+
   to {
     transform: translateX(0);
   }
@@ -90,20 +93,24 @@
 }
 
 @keyframes float {
+
   0%,
   100% {
     transform: translateY(0px);
   }
+
   50% {
     transform: translateY(-8px);
   }
 }
 
 @keyframes float-reverse {
+
   0%,
   100% {
     transform: translateY(0px);
   }
+
   50% {
     transform: translateY(8px);
   }
@@ -127,6 +134,7 @@
     transform: translateY(100%);
     opacity: 0;
   }
+
   to {
     transform: translateY(0);
     opacity: 1;
@@ -160,19 +168,10 @@ h1 {
   letter-spacing: -0.03em;
 }
 
-@media (max-width: 768px) {
-  h1 {
-    line-height: 1.08;
-    letter-spacing: -0.03em;
-  }
-
-  h2 {
-    line-height: 1.12;
-    letter-spacing: -0.025em;
-  }
-
-  body {
-    font-size: 15px;
-    line-height: 1.75;
+@media (min-width: 1280px) {
+  .desktop-container {
+    max-width: 1280px;
+    margin-inline: auto;
+    padding-inline: 2rem;
   }
 }

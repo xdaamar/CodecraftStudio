@@ -24,6 +24,7 @@ export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [isHidden, setIsHidden] = useState(false);
   const [lastScrollY, setLastScrollY] = useState(0);
+  const [isScrolled, setIsScrolled] = useState(false);
   const shouldReduceMotion = useReducedMotion();
 
   const toggleMenu = () => setIsOpen((prev) => !prev);
@@ -39,6 +40,7 @@ export function Navbar() {
         setIsHidden(false);
       }
 
+      setIsScrolled(currentScrollY > 40);
       setLastScrollY(currentScrollY);
     };
 
@@ -70,7 +72,11 @@ export function Navbar() {
           duration: 0.3,
           ease: 'easeInOut',
         }}
-        className="sticky top-0 z-50 w-full border-b border-slate-200/60 bg-white/85 backdrop-blur-xl shadow-[0_4px_30px_rgba(15,23,42,0.04)]"
+        className={`sticky top-0 z-50 w-full border-b border-slate-200/60 shadow-[0_4px_30px_rgba(15,23,42,0.04)] transition-all duration-300 ${
+          isScrolled
+            ? 'bg-white/85 backdrop-blur-xl shadow-sm'
+            : 'bg-white/70 backdrop-blur-md'
+        }`}
       >
         <nav
           className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6"
