@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { Menu, X } from 'lucide-react';
-import { motion, AnimatePresence, useReducedMotion } from 'framer-motion';
+import { motion, AnimatePresence, useReducedMotion, useScroll, useMotionValueEvent } from 'framer-motion';
 import { slideUp } from '@/lib/motion';
 
 type NavItem = {
@@ -23,30 +23,24 @@ const NAV_LINKS: NavItem[] = [
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [isHidden, setIsHidden] = useState(false);
-  const [lastScrollY, setLastScrollY] = useState(0);
   const [isScrolled, setIsScrolled] = useState(false);
   const shouldReduceMotion = useReducedMotion();
+  const { scrollY } = useScroll();
 
   const toggleMenu = () => setIsOpen((prev) => !prev);
   const closeMenu = () => setIsOpen(false);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const currentScrollY = window.scrollY;
-
-      if (currentScrollY > lastScrollY && currentScrollY > 60 && !isOpen) {
-        setIsHidden(true);
-      } else {
-        setIsHidden(false);
-      }
-
-      setIsScrolled(currentScrollY > 40);
-      setLastScrollY(currentScrollY);
-    };
-
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, [lastScrollY, isOpen]);
+  useMotionValueEvent(scrollY, 'change', (latest) => {
+    const previous = scrollY.getPrevious() ?? 0;
+    
+    if (latest > previous && latest > 60 && !isOpen) {
+      setIsHidden(true);
+    } else {
+      setIsHidden(false);
+    }
+    
+    setIsScrolled(latest > 40);
+  });
 
   // Lock body scroll when mobile menu is open
   useEffect(() => {
@@ -65,8 +59,8 @@ export function Navbar() {
       <motion.header
         initial={shouldReduceMotion ? false : { y: -24, opacity: 0 }}
         animate={{
-          y: isHidden ? '-100%' : 0,
-          opacity: isHidden ? 0 : 1,
+          y: isHidden ? '-150%' : 0,
+          opacity: 1,
         }}
         transition={{
           duration: 0.3,
@@ -78,8 +72,13 @@ export function Navbar() {
             : 'bg-white/70 backdrop-blur-md'
         }`}
       >
+        {/* Desktop Blue Slanted Shape */}
+        <div 
+          className="absolute right-0 top-[-8px] bottom-[-8px] w-[55vw] hidden md:block bg-blue-600 shadow-[-20px_0_40px_rgba(0,0,0,0.15)] pointer-events-none transition-all duration-300"
+          style={{ clipPath: 'polygon(3rem 0, 100% 0, 100% 100%, 0 100%)' }}
+        />
         <nav
-          className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6"
+          className="relative z-10 mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6"
           aria-label="Main navigation"
         >
           <Link
@@ -101,12 +100,12 @@ export function Navbar() {
           </Link>
 
           {/* Desktop nav links */}
-          <div className="ml-auto hidden md:flex md:items-center md:gap-8">
+          <div className="ml-auto hidden h-full md:flex md:items-center md:gap-8 px-8">
             {NAV_LINKS.map((item) => (
               <Link
                 key={item.label}
                 href={item.href}
-                className="text-sm font-medium text-slate-700 transition-colors hover:text-slate-950"
+                className="text-sm font-medium text-blue-50 transition-colors hover:text-white relative z-10"
               >
                 {item.label}
               </Link>
