@@ -117,7 +117,8 @@ export function Navbar() {
             type="button"
             onClick={toggleMenu}
             aria-expanded={isOpen}
-            aria-label="Toggle navigation menu"
+            aria-controls="mobile-navigation"
+            aria-label={isOpen ? 'Tutup menu navigasi' : 'Buka menu navigasi'}
             className="flex h-11 w-11 items-center justify-center rounded-xl text-text transition-colors hover:bg-black/5 focus:outline-none md:hidden"
           >
             <AnimatePresence mode="wait" initial={false}>
@@ -165,6 +166,7 @@ export function Navbar() {
 
             {/* Bottom sheet drawer */}
             <motion.div
+              id="mobile-navigation"
               key="drawer"
               variants={shouldReduceMotion ? undefined : slideUp}
               initial="hidden"

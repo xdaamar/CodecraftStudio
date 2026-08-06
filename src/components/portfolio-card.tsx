@@ -16,6 +16,7 @@ export function PortfolioCard({ item }: PortfolioCardProps) {
             alt={`${item.title} preview screenshot`}
             width={1200}
             height={750}
+            sizes="(max-width: 1024px) 100vw, 60vw"
             className="h-full w-full object-cover transition duration-500 group-hover:scale-[1.02]"
           />
         </div>
@@ -44,6 +45,7 @@ export function PortfolioCard({ item }: PortfolioCardProps) {
                     alt={proof.alt}
                     width={400}
                     height={225}
+                    sizes="(max-width: 640px) 33vw, 25vw"
                     className="h-full w-full object-cover"
                   />
                 </div>

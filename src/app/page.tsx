@@ -5,6 +5,7 @@ import { UMKMBenefits } from '@/components/umkm-benefits';
 import { DesktopCursorGlow } from '@/components/desktop-cursor-glow';
 import { ScrollProgressBar } from '@/components/scroll-progress-bar';
 import { faqSchema } from '@/lib/faq-schema';
+import { organizationSchema, localBusinessSchema } from '@/lib/business-schema';
 import { FloatingWhatsApp } from '@/components/floating-whatsapp';
 
 function SectionSkeleton({
@@ -83,6 +84,14 @@ export default function Home() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
       />
       <ScrollProgressBar />
       <DesktopCursorGlow />

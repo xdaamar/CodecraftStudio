@@ -23,6 +23,7 @@ const playwrite = localFont({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://codecraftstudio.my.id'),
   title:
     'Code Craft Studio — Software House & Web Development Agency Indonesia',
   description:
@@ -37,12 +38,32 @@ export const metadata: Metadata = {
     'jasa website Jawa Tengah',
     'website UMKM SEO friendly',
   ],
+  alternates: {
+    canonical: 'https://codecraftstudio.my.id',
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
   openGraph: {
     title: 'Code Craft Studio — Software House & Web Development Agency',
     description: 'Code Craft Studio adalah software house profesional yang melayani pembuatan website modern, aplikasi mobile, dan optimasi SEO lokal di Sukoharjo, Solo, Jawa Tengah, dan Indonesia.',
     siteName: 'Code Craft Studio',
     locale: 'id_ID',
     type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Code Craft Studio',
+    description: 'Jasa pembuatan website, aplikasi, dan optimasi SEO untuk UMKM dan bisnis lokal di Sukoharjo, Surakarta, Solo Baru, Karanganyar, Klaten, Wonogiri, Jawa Tengah hingga seluruh Indonesia.',
+    creator: '@ccs.id',
   },
 };
 

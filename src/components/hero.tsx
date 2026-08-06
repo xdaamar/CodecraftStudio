@@ -151,9 +151,12 @@ export function Hero() {
             loop
             playsInline
             preload="metadata"
+            poster="/images/mobile-hero-poster.webp"
             className="absolute inset-0 h-full w-full object-cover"
           >
             <source src={MOBILE_VIDEO_SRC} type="video/webm" />
+            {/* TODO: tambahkan /public/videos/mobile_herosection.mp4 sebagai fallback untuk legacy iOS */}
+            <source src="/videos/mobile_herosection.mp4" type="video/mp4" />
           </video>
         </motion.div>
 

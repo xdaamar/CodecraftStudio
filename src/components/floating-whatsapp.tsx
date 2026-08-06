@@ -6,8 +6,20 @@ import { FaWhatsapp } from 'react-icons/fa';
 
 export function FloatingWhatsApp() {
   const [isVisible, setIsVisible] = useState(false);
+  const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
+    // Delay mount by 2000ms
+    const mountTimer = setTimeout(() => {
+      setIsMounted(true);
+    }, 2000);
+
+    return () => clearTimeout(mountTimer);
+  }, []);
+
+  useEffect(() => {
+    if (!isMounted) return;
+
     const handleScroll = () => {
       if (window.scrollY > 300) {
         setIsVisible(true);
@@ -16,9 +28,14 @@ export function FloatingWhatsApp() {
       }
     };
 
+    // Check initial scroll position after mount
+    handleScroll();
+
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [isMounted]);
+
+  if (!isMounted) return null;
 
   return (
     <AnimatePresence>
@@ -35,7 +52,7 @@ export function FloatingWhatsApp() {
             target="_blank"
             rel="noopener noreferrer"
             className="group flex items-center justify-center rounded-full bg-[#25D366] p-4 text-white shadow-lg transition-transform hover:scale-105 active:scale-95"
-            aria-label="Konsultasi Gratis via WhatsApp"
+            aria-label="Hubungi Code Craft Studio melalui WhatsApp"
           >
             {/* Tooltip untuk Desktop */}
             <span className="absolute right-full mr-4 hidden whitespace-nowrap rounded-lg bg-slate-900 px-3 py-2 text-sm font-medium text-white shadow-md lg:block opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">

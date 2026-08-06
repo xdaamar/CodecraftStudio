@@ -56,6 +56,7 @@ export function Footer() {
                   href="https://wa.me/6287872926689"
                   target="_blank"
                   rel="noopener noreferrer"
+                  aria-label="Hubungi Code Craft Studio melalui WhatsApp"
                   className="inline-flex items-center gap-2 hover:text-blue-300 transition-colors"
                 >
                   <FaWhatsapp className="h-5 w-5 text-green-400" />
@@ -67,6 +68,7 @@ export function Footer() {
                   href="https://www.tiktok.com/@ccs.id"
                   target="_blank"
                   rel="noopener noreferrer"
+                  aria-label="Kunjungi TikTok Code Craft Studio"
                   className="inline-flex items-center gap-2 hover:text-blue-300 transition-colors"
                 >
                   <SiTiktok className="h-4 w-4 text-white" />
@@ -78,6 +80,7 @@ export function Footer() {
                   href="https://codecraftstudio.my.id"
                   target="_blank"
                   rel="noopener noreferrer"
+                  aria-label="Kunjungi Website Utama Code Craft Studio"
                   className="inline-flex items-center gap-2 hover:text-blue-300 transition-colors"
                 >
                   <Globe className="h-5 w-5 text-blue-100" />
