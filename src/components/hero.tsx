@@ -114,6 +114,7 @@ export function Hero() {
   const shouldReduceMotion = useReducedMotion();
 
   // Floating stack icon animation
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const floatTransition: any = shouldReduceMotion
     ? undefined
     : { duration: 4, repeat: Infinity, ease: 'easeInOut' };
@@ -132,7 +133,7 @@ export function Hero() {
             transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
             className="inline-flex items-center rounded-full border border-border-light bg-surface px-3 py-1 text-xs font-semibold uppercase tracking-widest text-muted shadow-xs"
           >
-            Software House • Web Development • SEO
+            WEB DEVELOPMENT • APPS DEVELOPMENT
           </motion.span>
         </div>
 
@@ -247,7 +248,7 @@ export function Hero() {
               transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
               className="inline-flex items-center rounded-full border border-border-light bg-surface px-3.5 py-1 text-xs font-semibold uppercase tracking-widest text-muted shadow-xs"
             >
-              Software House • Web Development • SEO Agency
+              WEB DEVELOPMENT • APPS DEVELOPMENT
             </motion.span>
 
             <motion.div
@@ -323,7 +324,7 @@ export function Hero() {
 
               <motion.div
                 animate={floatAnim}
-                transition={{ ...floatTransition, delay: 0.5 } as any}
+                transition={{ ...floatTransition, delay: 0.5 }}
                 className="absolute top-4 right-4 z-20 hidden lg:inline-flex items-center gap-1.5 rounded-2xl border border-black/5 bg-white/90 backdrop-blur-sm px-3.5 py-1.5 text-xs font-semibold text-text shadow-md"
               >
                 <SiNextdotjs className="h-4 w-4 text-slate-900" />
@@ -332,7 +333,7 @@ export function Hero() {
 
               <motion.div
                 animate={floatAnim}
-                transition={{ ...floatTransition, delay: 1 } as any}
+                transition={{ ...floatTransition, delay: 1 }}
                 className="absolute bottom-16 right-0 z-20 hidden lg:inline-flex items-center gap-1.5 rounded-2xl border border-black/5 bg-white/90 backdrop-blur-sm px-3.5 py-1.5 text-xs font-semibold text-text shadow-md"
               >
                 <span className="h-4 w-4 rounded-sm bg-blue-600 text-[8px] font-bold text-white flex justify-center items-center">TS</span>
@@ -341,7 +342,7 @@ export function Hero() {
 
               <motion.div
                 animate={floatAnim}
-                transition={{ ...floatTransition, delay: 1.5 } as any}
+                transition={{ ...floatTransition, delay: 1.5 }}
                 className="absolute bottom-6 left-4 z-20 hidden lg:inline-flex items-center gap-1.5 rounded-2xl border border-black/5 bg-white/90 backdrop-blur-sm px-3.5 py-1.5 text-xs font-semibold text-text shadow-md"
               >
                 <svg className="h-4 w-4 text-cyan-400" viewBox="0 0 24 24" fill="currentColor">
@@ -352,7 +353,7 @@ export function Hero() {
 
               <motion.div
                 animate={floatAnim}
-                transition={{ ...floatTransition, delay: 0.2 } as any}
+                transition={{ ...floatTransition, delay: 0.2 }}
                 className="absolute top-1/2 -right-4 z-20 hidden lg:inline-flex -translate-y-1/2 items-center gap-1.5 rounded-2xl border border-black/5 bg-white/90 backdrop-blur-sm px-3.5 py-1.5 text-xs font-semibold text-text shadow-md"
               >
                 <SiMysql className="h-4 w-4 text-[#4479A1]" />

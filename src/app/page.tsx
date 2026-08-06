@@ -4,6 +4,8 @@ import { StackMarquee } from '@/components/stack-marquee';
 import { UMKMBenefits } from '@/components/umkm-benefits';
 import { DesktopCursorGlow } from '@/components/desktop-cursor-glow';
 import { ScrollProgressBar } from '@/components/scroll-progress-bar';
+import { faqSchema } from '@/lib/faq-schema';
+import { FloatingWhatsApp } from '@/components/floating-whatsapp';
 
 function SectionSkeleton({
   heightClass = 'min-h-[500px]',
@@ -43,9 +45,45 @@ const PricingPackages = dynamic(
   }
 );
 
+const TrustStrip = dynamic(
+  () =>
+    import('@/components/trust-strip').then((mod) => mod.TrustStrip),
+  {
+    loading: () => <SectionSkeleton heightClass="min-h-[200px]" />,
+  }
+);
+
+const ProcessSection = dynamic(
+  () =>
+    import('@/components/process-section').then((mod) => mod.ProcessSection),
+  {
+    loading: () => <SectionSkeleton heightClass="min-h-[500px]" />,
+  }
+);
+
+const FAQSection = dynamic(
+  () =>
+    import('@/components/faq-section').then((mod) => mod.FAQSection),
+  {
+    loading: () => <SectionSkeleton heightClass="min-h-[600px]" />,
+  }
+);
+
+const Footer = dynamic(
+  () =>
+    import('@/components/footer').then((mod) => mod.Footer),
+  {
+    loading: () => <SectionSkeleton heightClass="min-h-[300px]" />,
+  }
+);
+
 export default function Home() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
       <ScrollProgressBar />
       <DesktopCursorGlow />
       <main className="bg-background overflow-x-hidden">
@@ -55,7 +93,13 @@ export default function Home() {
         <PortfolioSection />
         <ServicesSection />
         <PricingPackages />
+        <TrustStrip />
+        <ProcessSection />
+        <FAQSection />
+        <Footer />
+        <FloatingWhatsApp />
       </main>
     </>
   );
 }
+

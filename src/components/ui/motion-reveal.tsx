@@ -10,6 +10,7 @@ const VIEWPORT_CONFIG = { amount: 0.35 };
 /**
  * Base Props for our Reusable Motion Components.
  */
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 interface BaseMotionProps extends HTMLMotionProps<any> {
   children: React.ReactNode;
   className?: string;

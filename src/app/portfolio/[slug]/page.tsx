@@ -15,6 +15,8 @@ import {
   MotionDiv,
   MotionChild,
 } from '@/components/motion/motion-wrapper';
+import { Footer } from '@/components/footer';
+
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -298,6 +300,9 @@ export default async function PortfolioDetailPage({ params }: Props) {
             </div>
           </div>
         </MotionDiv>
+      </div>
+      <div className="mt-24 w-full relative z-10">
+        <Footer />
       </div>
     </main>
   );

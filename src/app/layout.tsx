@@ -27,6 +27,23 @@ export const metadata: Metadata = {
     'Code Craft Studio — Software House & Web Development Agency Indonesia',
   description:
     'Code Craft Studio adalah software house profesional yang melayani pembuatan website modern, aplikasi mobile, dan optimasi SEO lokal di Sukoharjo, Solo, Jawa Tengah, dan Indonesia.',
+  keywords: [
+    'jasa pembuatan website Sukoharjo',
+    'jasa pembuatan website Surakarta',
+    'jasa pembuatan website Solo Baru',
+    'jasa pembuatan website Karanganyar',
+    'jasa pembuatan website Klaten',
+    'jasa pembuatan website Wonogiri',
+    'jasa website Jawa Tengah',
+    'website UMKM SEO friendly',
+  ],
+  openGraph: {
+    title: 'Code Craft Studio — Software House & Web Development Agency',
+    description: 'Code Craft Studio adalah software house profesional yang melayani pembuatan website modern, aplikasi mobile, dan optimasi SEO lokal di Sukoharjo, Solo, Jawa Tengah, dan Indonesia.',
+    siteName: 'Code Craft Studio',
+    locale: 'id_ID',
+    type: 'website',
+  },
 };
 
 export default function RootLayout({

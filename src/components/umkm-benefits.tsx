@@ -5,6 +5,7 @@ import { useScroll, useTransform, motion, AnimatePresence } from 'framer-motion'
 import { Check, ShieldCheck } from 'lucide-react';
 import { UMKM_BENEFITS, type BenefitItem } from '@/lib/constants';
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 function StackedBenefitCard({ benefit, index }: { benefit: BenefitItem; index: number }) {
   const containerRef = useRef<HTMLDivElement>(null);
   
