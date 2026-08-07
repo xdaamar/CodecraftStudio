@@ -36,8 +36,8 @@ export function TrustStrip() {
   const VIEWPORT_CONFIG = { amount: 0.35 };
 
   return (
-    <section aria-label="Statistik dan Kepercayaan" className="w-full bg-white py-12 lg:py-16">
-      <MobileSweepSection className="mx-auto max-w-6xl px-4 sm:px-6">
+    <section aria-label="Statistik dan Kepercayaan" className="w-full bg-white py-12 lg:py-16 xl:py-20">
+      <MobileSweepSection className="mx-auto w-full max-w-[1380px] px-4 sm:px-6 lg:px-8 xl:px-10">
         <div className="grid grid-cols-2 gap-4 lg:grid-cols-4 lg:gap-6">
           {STATS.map((stat, idx) => (
             <motion.div

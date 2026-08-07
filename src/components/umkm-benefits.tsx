@@ -165,9 +165,9 @@ export function UMKMBenefits() {
     <section
       id="benefits"
       aria-label="Keunggulan Layanan"
-      className="w-full bg-gradient-to-b from-emerald-50 via-white to-slate-50 py-16 lg:py-24 overflow-hidden"
+      className="w-full bg-gradient-to-b from-emerald-50 via-white to-slate-50 py-16 lg:py-24 xl:py-28 overflow-hidden"
     >
-      <MobileSweepSection className="mx-auto max-w-6xl px-4 sm:px-6">
+      <MobileSweepSection className="mx-auto w-full max-w-[1380px] px-4 sm:px-6 lg:px-8 xl:px-10">
         <div className="flex flex-col items-center text-center">
           <MotionHeading delay={0}>
             <span className="inline-flex items-center rounded-full border border-slate-200/60 bg-white/90 px-3.5 py-1 text-xs font-semibold tracking-wide text-blue-600 uppercase shadow-xs">

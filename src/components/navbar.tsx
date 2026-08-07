@@ -78,7 +78,7 @@ export function Navbar() {
           style={{ clipPath: 'polygon(3rem 0, 100% 0, 100% 100%, 0 100%)' }}
         />
         <nav
-          className="relative z-10 mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6"
+          className="relative z-10 mx-auto flex h-16 w-full max-w-[1420px] items-center justify-between px-4 sm:px-6 lg:px-8 xl:px-10"
           aria-label="Main navigation"
         >
           <Link

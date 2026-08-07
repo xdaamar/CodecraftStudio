@@ -6,7 +6,7 @@ import { Globe } from 'lucide-react';
 export function Footer() {
   return (
     <footer className="w-full border-t border-blue-700 bg-blue-600 pt-16 pb-8 text-white">
-      <div className="mx-auto max-w-6xl px-4 sm:px-6">
+      <div className="mx-auto w-full max-w-[1380px] px-4 sm:px-6 lg:px-8 xl:px-10">
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-3 lg:gap-8">
           {/* Kolom 1 - Brand */}
           <div className="flex flex-col">

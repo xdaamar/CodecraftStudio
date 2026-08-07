@@ -149,9 +149,9 @@ export function PricingPackages() {
     <section
       id="pricing"
       aria-label="Paket Website"
-      className="w-full bg-slate-50 py-16 lg:py-24"
+      className="w-full bg-slate-50 py-16 lg:py-24 xl:py-28"
     >
-      <MobileSweepSection className="mx-auto max-w-6xl px-4 sm:px-6">
+      <MobileSweepSection className="mx-auto w-full max-w-[1380px] px-4 sm:px-6 lg:px-8 xl:px-10">
         <div className="mx-auto max-w-2xl text-center">
           <motion.div
             initial={{ opacity: 0, y: 24 }}

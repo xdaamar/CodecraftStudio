@@ -15,11 +15,11 @@ export function PortfolioSection() {
     <section
       id="work"
       aria-label="Portofolio Pilihan"
-      className="relative w-full overflow-hidden bg-slate-950 py-16 lg:py-24"
+      className="relative w-full overflow-hidden bg-slate-950 py-16 lg:py-24 xl:py-28"
     >
       <div className="pointer-events-none absolute -top-10 left-1/2 h-32 w-32 -translate-x-1/2 rounded-full bg-blue-100/40 blur-3xl" />
 
-      <MobileSweepSection className="mx-auto max-w-6xl px-4 sm:px-6">
+      <MobileSweepSection className="mx-auto w-full max-w-[1380px] px-4 sm:px-6 lg:px-8 xl:px-10">
         <div className="flex flex-col items-center text-center">
           <motion.div
             initial={{ opacity: 0, x: -24 }}
@@ -56,7 +56,7 @@ export function PortfolioSection() {
         </div>
 
         {/* Horizontal scroll / snap carousel */}
-        <div className="mt-12 -mx-4 flex overflow-x-auto snap-x snap-mandatory scroll-px-4 gap-4 px-4 pb-6 pt-2 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden sm:-mx-6 sm:scroll-px-6 sm:gap-6 sm:px-6">
+        <div className="mt-12 -mx-4 flex overflow-x-auto snap-x snap-mandatory scroll-px-4 gap-4 px-4 pb-6 pt-2 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden sm:-mx-6 sm:scroll-px-6 sm:gap-6 sm:px-6 lg:mx-0 lg:grid lg:grid-cols-3 lg:overflow-visible lg:px-0 lg:gap-8">
           {projects.map((project) => (
             <PortfolioPreviewCard key={project.slug} item={project} />
           ))}

@@ -241,9 +241,9 @@ export function Hero() {
       </div>
 
       {/* ─── DESKTOP LAYOUT (≥ lg) ─────────────────────────── */}
-      <div className="mx-auto hidden min-h-[85vh] max-w-6xl flex-col justify-center px-4 py-16 sm:px-6 lg:flex lg:py-24">
-        <div className="grid grid-cols-1 items-center gap-8 lg:grid-cols-12 lg:gap-x-16 lg:gap-y-8">
-          <div className="flex flex-col items-center text-center lg:col-span-7 lg:col-start-1 lg:row-start-1 lg:items-start lg:text-left">
+      <div className="mx-auto hidden min-h-[85vh] w-full max-w-[1420px] flex-col justify-center px-6 py-16 lg:flex lg:px-10 lg:py-24 xl:px-12">
+        <div className="grid grid-cols-1 items-center gap-8 lg:grid-cols-[58%_42%] lg:gap-x-16 lg:gap-y-8">
+          <div className="flex flex-col items-center text-center lg:col-start-1 lg:row-start-1 lg:items-start lg:text-left">
             <motion.span
               initial={{ opacity: 0, x: -24 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -259,7 +259,7 @@ export function Hero() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={VIEWPORT}
               transition={{ delay: 0.08, duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
-              className="mt-6 min-h-[2.2em] font-heading text-3xl font-extrabold tracking-tight sm:min-h-[1.5em] sm:text-5xl lg:text-6xl"
+              className="mt-6 min-h-[2.2em] font-heading text-3xl font-extrabold tracking-tight sm:min-h-[1.5em] sm:text-5xl lg:text-6xl xl:text-7xl 2xl:text-[84px]"
             >
               <h1>
                 <Typewriter words={HERO_SERVICES_WORDS} colors={SERVICE_COLORS} />
@@ -271,9 +271,9 @@ export function Hero() {
               whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
               viewport={VIEWPORT}
               transition={{ delay: 0.16, duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
-              className="mt-4 max-w-xl"
+              className="mt-4 max-w-2xl"
             >
-              <p className="font-playwrite text-base leading-relaxed text-muted sm:text-lg">
+              <p className="font-playwrite text-base leading-relaxed text-muted sm:text-lg lg:text-xl xl:text-[22px]">
                 Kami membantu UMKM, perusahaan, lembaga pendidikan, dan startup
                 membangun website cepat, mobile-friendly, SEO-ready, dan mudah
                 dikembangkan untuk kebutuhan bisnis jangka panjang.
@@ -303,7 +303,7 @@ export function Hero() {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={VIEWPORT}
             transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-            className="w-full lg:col-span-5 lg:col-start-8 lg:row-span-2 lg:row-start-1 lg:self-center"
+            className="w-full lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:self-center"
           >
             <div className="relative flex w-full items-center justify-center py-6">
               <div className="relative z-10 flex w-full items-center justify-center">
@@ -311,7 +311,7 @@ export function Hero() {
                 <img
                   src={GIF_URL}
                   alt="Code Craft Studio software development animation"
-                  className="h-auto w-full max-w-full object-contain"
+                  className="h-auto w-full max-w-[620px] object-contain"
                 />
               </div>
 
@@ -365,7 +365,7 @@ export function Hero() {
             </div>
           </motion.div>
 
-          <div className="flex w-full flex-col gap-3 sm:w-auto sm:flex-row sm:items-center sm:justify-center lg:col-span-7 lg:col-start-1 lg:row-start-2 lg:justify-start">
+          <div className="flex w-full flex-col gap-3 sm:w-auto sm:flex-row sm:items-center sm:justify-center lg:col-start-1 lg:row-start-2 lg:justify-start mt-4">
             <motion.a
               initial={{ opacity: 0, y: 32 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -374,7 +374,7 @@ export function Hero() {
               href={WA_LINK}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex h-12 w-full items-center justify-center gap-2 rounded-full bg-green-500 px-8 text-sm font-medium text-white shadow-sm transition hover:bg-green-600 sm:w-auto"
+              className="inline-flex h-12 w-full items-center justify-center gap-2 rounded-full bg-green-500 px-8 text-sm font-medium text-white shadow-sm transition hover:bg-green-600 sm:w-auto lg:h-14 lg:px-8 lg:text-base xl:h-16 xl:px-9 xl:text-lg"
             >
               <FaWhatsapp className="text-base" />
               <span>Contact via Whatsapp</span>
@@ -388,7 +388,7 @@ export function Hero() {
             >
               <Link
                 href="#services"
-                className="inline-flex h-12 w-full items-center justify-center rounded-full bg-slate-900 px-7 text-sm font-semibold text-white shadow-md transition hover:bg-slate-800 sm:w-auto"
+                className="inline-flex h-12 w-full items-center justify-center rounded-full bg-slate-900 px-7 text-sm font-semibold text-white shadow-md transition hover:bg-slate-800 sm:w-auto lg:h-14 lg:px-8 lg:text-base xl:h-16 xl:px-9 xl:text-lg"
               >
                 Lihat Layanan Kami
               </Link>

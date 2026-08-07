@@ -35,8 +35,8 @@ export function ProcessSection() {
   const VIEWPORT_CONFIG = { amount: 0.35 };
 
   return (
-    <section aria-label="Alur Kerja" className="w-full bg-slate-50 py-16 lg:py-24">
-      <MobileSweepSection className="mx-auto max-w-6xl px-4 sm:px-6">
+    <section aria-label="Alur Kerja" className="w-full bg-slate-50 py-16 lg:py-24 xl:py-28">
+      <MobileSweepSection className="mx-auto w-full max-w-[1380px] px-4 sm:px-6 lg:px-8 xl:px-10">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}

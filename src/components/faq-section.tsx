@@ -48,7 +48,7 @@ export function FAQSection() {
   const VIEWPORT_CONFIG = { amount: 0.35 };
 
   return (
-    <section aria-label="FAQ" className="w-full bg-white py-16 lg:py-24">
+    <section aria-label="FAQ" className="w-full bg-white py-16 lg:py-24 xl:py-28">
       <MobileSweepSection className="mx-auto max-w-4xl px-4 sm:px-6">
         <motion.div
           initial={{ opacity: 0, y: 24 }}

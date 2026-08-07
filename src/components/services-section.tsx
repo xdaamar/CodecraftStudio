@@ -159,9 +159,9 @@ export function ServicesSection() {
     <section
       id="services"
       aria-label="Layanan Website"
-      className="w-full border-y border-slate-200/70 bg-gradient-to-b from-orange-50 via-white to-blue-50 py-16 lg:py-24"
+      className="w-full border-y border-slate-200/70 bg-gradient-to-b from-orange-50 via-white to-blue-50 py-16 lg:py-24 xl:py-28"
     >
-      <MobileSweepSection className="mx-auto max-w-6xl px-4 sm:px-6">
+      <MobileSweepSection className="mx-auto w-full max-w-[1380px] px-4 sm:px-6 lg:px-8 xl:px-10">
         <motion.div
           initial="hidden"
           whileInView="visible"
