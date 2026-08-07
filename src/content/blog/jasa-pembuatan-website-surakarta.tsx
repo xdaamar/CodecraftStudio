@@ -9,6 +9,7 @@ export const post: BlogPost = {
   description: 'Panduan memilih jasa pembuatan website Surakarta yang cepat, mobile friendly, dan siap dioptimasi untuk Google Search serta AI Overview bagi UMKM dan bisnis lokal Solo Raya.',
   cover: '/images/blog/blog_jasa_pembuatan_web_surakarta.webp',
   date: '2026-08-08',
+  updatedAt: '2026-08-08',
   category: 'SEO Lokal',
   featured: true,
   readingTime: '9 menit baca',
@@ -170,6 +171,16 @@ export default function ArticleContent() {
       </p>
 
       <hr className="my-10 border-slate-200" />
+
+      <div className="bg-slate-900 text-white rounded-2xl p-8 my-8 text-center sm:text-left sm:flex sm:items-center sm:justify-between">
+        <div className="mb-6 sm:mb-0 sm:pr-8">
+          <h3 className="text-xl font-bold text-white mb-2 mt-0">Ingin Tahu Detail Layanan Kami?</h3>
+          <p className="text-slate-300 m-0">Lihat portofolio, teknologi yang kami gunakan, dan berbagai layanan unggulan Code Craft Studio untuk mentransformasi bisnis Anda.</p>
+        </div>
+        <Link href="/" className="inline-block bg-blue-500 hover:bg-blue-600 text-white font-semibold py-3 px-6 rounded-full transition-colors whitespace-nowrap">
+          Lihat Beranda & Layanan
+        </Link>
+      </div>
 
       <h2>Konsultasi Website UMKM Gratis</h2>
       <p>

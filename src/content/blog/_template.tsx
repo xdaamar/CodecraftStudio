@@ -4,6 +4,7 @@ export type BlogPost = {
   description: string;
   cover: string;
   date: string;
+  updatedAt?: string;
   category: string;
   featured: boolean;
   readingTime: string;
@@ -18,6 +19,7 @@ export const post: BlogPost = {
   description: 'Deskripsi meta untuk keperluan SEO (sekitar 150-160 karakter).',
   cover: '/images/blog/placeholder.webp',
   date: '2026-08-07',
+  updatedAt: '2026-08-07',
   category: 'Kategori Artikel',
   featured: false,
   readingTime: '5 menit baca',

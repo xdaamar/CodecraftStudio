@@ -8,7 +8,7 @@ import { Footer } from '@/components/footer';
 import { RelatedPosts } from '@/components/related-posts';
 import { FloatingWhatsApp } from '@/components/floating-whatsapp';
 import { blogPosts } from '@/content/blog';
-// import removed
+import { siteConfig } from '@/lib/site-config';
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -30,7 +30,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     };
   }
 
-  const url = `https://codecraftstudio.my.id/blog/${post.slug}`;
+  const url = `${siteConfig.url}/blog/${post.slug}`;
 
   return {
     title: `${post.title} | Code Craft Studio`,
@@ -47,7 +47,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       locale: 'id_ID',
       type: 'article',
       publishedTime: post.date,
-      authors: ['Code Craft Studio'],
+      modifiedTime: post.updatedAt || post.date,
+      authors: [siteConfig.author],
       images: [
         {
           url: post.cover,
