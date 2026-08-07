@@ -1,3 +1,4 @@
+import React from 'react';
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import Image from 'next/image';
@@ -7,9 +8,10 @@ import { Footer } from '@/components/footer';
 import { RelatedPosts } from '@/components/related-posts';
 import { FloatingWhatsApp } from '@/components/floating-whatsapp';
 import { blogPosts } from '@/content/blog';
+// import removed
 
 type Props = {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 };
 
 export async function generateStaticParams() {
@@ -19,7 +21,8 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const post = blogPosts.find((p) => p.slug === params.slug);
+  const { slug } = await params;
+  const post = blogPosts.find((p) => p.slug === slug);
 
   if (!post) {
     return {
@@ -65,7 +68,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export default async function BlogPostPage({ params }: Props) {
-  const postIndex = blogPosts.findIndex((p) => p.slug === params.slug);
+  const { slug } = await params;
+  const postIndex = blogPosts.findIndex((p) => p.slug === slug);
 
   if (postIndex === -1) {
     notFound();
@@ -73,13 +77,12 @@ export default async function BlogPostPage({ params }: Props) {
 
   const post = blogPosts[postIndex];
 
-  // Dynamically import the article component
-  let ArticleContent;
-  try {
-    const importedModule = await import(`@/content/blog/${post.slug}`);
-    ArticleContent = importedModule.default;
-  } catch (err) {
-    console.error('Error loading article content:', err);
+  // Use the statically mapped component instead of dynamic import
+  // which can fail in Turbopack dev mode
+  const ArticleContent = (post as unknown as { Component: React.ComponentType }).Component;
+  
+  if (!ArticleContent) {
+    console.error('Error: Component not found for post', post.slug);
     notFound();
   }
 
@@ -121,9 +124,6 @@ export default async function BlogPostPage({ params }: Props) {
           {/* Header */}
           <header className="mb-10 text-center">
             <div className="flex items-center justify-center gap-4 text-sm font-medium text-slate-500">
-              <span className="inline-flex rounded-full bg-blue-50 px-3 py-1 text-blue-700">
-                {post.category}
-              </span>
               <span className="flex items-center gap-1.5">
                 <Calendar className="h-4 w-4" />
                 {formattedDate}

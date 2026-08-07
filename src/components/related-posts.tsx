@@ -11,8 +11,8 @@ export function RelatedPosts({ currentSlug, category }: { currentSlug: string; c
     .slice(0, 3);
 
   // If we don't have related posts in the same category, just take other recent posts
-  const displayPosts = related.length > 0 
-    ? related 
+  const displayPosts = related.length > 0
+    ? related
     : blogPosts.filter(p => p.slug !== currentSlug).slice(0, 3);
 
   if (displayPosts.length === 0) {
@@ -55,7 +55,7 @@ export function RelatedPosts({ currentSlug, category }: { currentSlug: string; c
                 </h4>
               </div>
             </div>
-            
+
             <div className="mt-6">
               <Link
                 href={`/blog/${post.slug}`}

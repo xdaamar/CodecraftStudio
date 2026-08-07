@@ -30,9 +30,6 @@ export function BlogListCard({ post }: { post: BlogPost }) {
       {/* Content */}
       <div className="flex flex-1 flex-col justify-center">
         <div className="flex items-center gap-4 text-xs font-medium text-slate-500 sm:text-sm">
-          <span className="inline-flex items-center rounded-full bg-blue-50 px-2.5 py-1 text-blue-700">
-            {post.category}
-          </span>
           <span className="flex items-center gap-1.5">
             <Calendar className="h-4 w-4" />
             {formattedDate}

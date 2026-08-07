@@ -12,11 +12,11 @@ export function BlogHeroSlider() {
 
   useEffect(() => {
     if (featuredPosts.length <= 1) return;
-    
+
     const interval = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % featuredPosts.length);
     }, 5000);
-    
+
     return () => clearInterval(interval);
   }, []);
 
@@ -31,9 +31,15 @@ export function BlogHeroSlider() {
   if (featuredPosts.length === 0) return null;
 
   const currentPost = featuredPosts[currentIndex];
+  
+  const formattedDate = new Date(currentPost.date).toLocaleDateString('id-ID', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+  });
 
   return (
-    <section className="relative w-full h-[50vh] min-h-[400px] sm:h-[60vh] overflow-hidden bg-slate-900">
+    <section className="relative w-full h-[300px] sm:h-[460px] overflow-hidden bg-slate-900">
       <AnimatePresence mode="wait">
         <motion.div
           key={currentIndex}
@@ -51,26 +57,40 @@ export function BlogHeroSlider() {
             sizes="100vw"
             className="object-cover"
           />
-          {/* Hitam tipis memfilter gambar */}
-          <div className="absolute inset-0 bg-black/30" />
+          <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-900/40 to-transparent" />
         </motion.div>
       </AnimatePresence>
 
-      <div className="relative z-10 mx-auto flex h-full max-w-6xl flex-col justify-end p-6 sm:p-10 lg:p-12 w-full">
+      <div className="relative z-10 mx-auto flex h-full max-w-5xl flex-col justify-end p-6 sm:px-6 sm:pb-12 w-full">
         <AnimatePresence mode="wait">
           <motion.div
             key={`content-${currentIndex}`}
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
+            exit={{ opacity: 0, y: -15 }}
             transition={{ duration: 0.5, delay: 0.2, ease: 'easeOut' }}
+            className="max-w-3xl"
           >
-            <div>
+            <div className="flex items-center gap-3">
+              <span className="text-sm font-semibold text-slate-300 uppercase tracking-wide">
+                {formattedDate}
+              </span>
+            </div>
+            
+            <h2 className="mt-3 font-heading text-2xl font-bold leading-snug tracking-tight text-white line-clamp-2 sm:text-4xl sm:leading-tight">
+              {currentPost.title}
+            </h2>
+            
+            <p className="mt-3 line-clamp-2 text-sm leading-relaxed text-slate-300 sm:text-lg">
+              {currentPost.description}
+            </p>
+
+            <div className="mt-6">
               <Link
                 href={`/blog/${currentPost.slug}`}
-                className="inline-flex items-center justify-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-bold text-slate-900 shadow-lg transition-all hover:bg-slate-100 hover:scale-105 active:scale-95"
+                className="inline-flex items-center gap-2 text-sm font-bold text-blue-400 transition-colors hover:text-blue-300"
               >
-                <span>Baca Artikel</span>
+                <span>Baca Artikel Selengkapnya</span>
                 <ArrowRight className="h-4 w-4" />
               </Link>
             </div>
@@ -107,9 +127,7 @@ export function BlogHeroSlider() {
               key={idx}
               type="button"
               onClick={() => setCurrentIndex(idx)}
-              className={`h-1.5 rounded-full transition-all ${
-                idx === currentIndex ? 'w-6 bg-blue-600' : 'w-1.5 bg-white/50'
-              }`}
+              className={`h-1.5 rounded-full transition-all ${idx === currentIndex ? 'w-6 bg-blue-600' : 'w-1.5 bg-white/50'}`}
               aria-label={`Go to slide ${idx + 1}`}
             />
           ))}
