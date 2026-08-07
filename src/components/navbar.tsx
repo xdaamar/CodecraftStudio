@@ -13,11 +13,11 @@ type NavItem = {
 
 const NAV_LINKS: NavItem[] = [
   { label: 'Home', href: '/' },
-  { label: 'Services', href: '#services' },
-  { label: 'Portfolio', href: '#work' },
-  { label: 'Pricing', href: '#pricing' },
-  { label: 'Blog', href: '#blog' },
-  { label: 'Contact', href: '#contact' },
+  { label: 'Services', href: '/#services' },
+  { label: 'Portfolio', href: '/#work' },
+  { label: 'Pricing', href: '/#pricing' },
+  { label: 'Blog', href: '/blog' },
+  { label: 'Contact', href: '/#contact' },
 ];
 
 export function Navbar() {
