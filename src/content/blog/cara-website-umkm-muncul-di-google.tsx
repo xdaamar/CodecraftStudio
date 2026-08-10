@@ -6,23 +6,23 @@ import Link from 'next/link';
 export const post: BlogPost = {
   slug: 'cara-website-umkm-muncul-di-google',
   title: 'Cara Agar Website UMKM Muncul di Google Maps dan Pencarian Lokal',
-  description: 'Panduan lengkap cara agar website UMKM lokal muncul di Google Maps dan pencarian Google untuk mendapatkan lebih banyak pelanggan di wilayah Solo Raya.',
-  cover: '/images/blog/Cara_Agar_Website_UMKM_Muncul_di_Google_Maps_dan_Pencarian_Lokal.webp',
-  date: '2026-08-08',
-  updatedAt: '2026-08-08',
+  description: 'Pelajari cara menghubungkan website UMKM dengan Google Business Profile agar bisnis lebih mudah muncul di Google Maps dan pencarian lokal seperti Solo Baru, Sukoharjo, Surakarta, dan Solo Raya.',
+  cover: '/images/blog/cara-website-umkm-muncul-di-google-cover.webp',
+  date: '2026-08-10',
+  updatedAt: '2026-08-10',
   category: 'SEO Lokal',
   featured: true,
-  readingTime: '9 menit baca',
+  readingTime: '10 menit baca',
   keywords: [
-    'cara agar website muncul di Google Maps',
+    'cara website UMKM muncul di Google Maps',
     'website UMKM muncul di Google',
-    'SEO lokal UMKM',
-    'Google Business Profile',
-    'website bisnis lokal',
-    'website muncul di pencarian Google',
-    'optimasi Google Maps bisnis lokal',
-    'website UMKM Solo Raya',
-    'website bisnis Sukoharjo dan Surakarta',
+    'SEO lokal Solo Raya',
+    'Google Business Profile Sukoharjo',
+    'Google Maps Solo Baru',
+    'website bisnis lokal Surakarta',
+    'optimasi Google Maps UMKM',
+    'website muncul di pencarian lokal',
+    'SEO Google Maps untuk bisnis kecil',
   ],
 };
 
@@ -30,170 +30,141 @@ export default function ArticleContent() {
   return (
     <>
       <p>
-        Pernahkah Anda bertanya-tanya, mengapa bisnis tetangga Anda yang baru buka sudah muncul di halaman pertama <strong>Google Maps</strong>, sedangkan toko atau jasa Anda—yang sudah beroperasi bertahun-tahun—bahkan sulit ditemukan di <strong>Google Search</strong>? 
+        Banyak pemilik <strong>UMKM lokal</strong> yang merasa bingung dan frustrasi karena masalah ini: Anda <strong>sudah punya website</strong> yang bagus, Anda juga <strong>sudah punya Google Maps</strong>, dan bahkan <strong>sudah mendaftarkan Google Business Profile</strong>. Anda merasa sudah melakukan segalanya dengan benar, <strong>tetapi bisnis masih sulit ditemukan pelanggan baru</strong> ketika mereka mencari di Google.
       </p>
 
       <p>
-        Seringkali, pemilik <strong>UMKM lokal</strong> di wilayah seperti <strong>Sukoharjo, Surakarta, maupun Solo Baru</strong> merasa sudah cukup dengan hanya mengandalkan <strong>WhatsApp atau Instagram</strong>. Sayangnya, ketika calon pembeli membutuhkan solusi mendesak (seperti "servis AC terdekat" atau "jasa interior Solo"), mereka tidak membuka Instagram—mereka mencari di Google. Jika bisnis Anda tidak ada di sana, Anda baru saja kehilangan pelanggan yang siap membayar.
+        Di kota-kota yang mulai padat persaingan bisnisnya seperti <strong>Solo Baru, Sukoharjo, dan Surakarta</strong>, sekadar memiliki aset digital saja tidak cukup. Banyak kompetitor di <strong>Solo Raya</strong> yang mungkin produknya biasa saja, tapi warungnya selalu ramai karena mereka tahu cara menyinkronkan website dengan <strong>Google Business Profile</strong>.
       </p>
 
-      <h2>1. Mengapa Banyak UMKM Tidak Muncul di Google Maps</h2>
       <p>
-        Banyak UMKM yang usahanya sudah memiliki lokasi fisik yang jelas namun tetap "gaib" di internet. Berikut adalah beberapa alasan utamanya:
+        Kunci rahasianya ada pada "keterhubungan". <strong>Google Maps</strong> tidak berdiri sendiri; ia sangat bergantung pada informasi dari website Anda untuk memastikan bahwa bisnis Anda layak direkomendasikan di peringkat atas. Mari kita bahas cara menghubungkan keduanya agar bisnis lokal Anda mendominasi pencarian.
       </p>
-      <ul>
-        <li><strong>Tidak memiliki akun Google Business Profile:</strong> Ini adalah syarat wajib jika Anda ingin bisnis muncul di Maps.</li>
-        <li><strong>Data bisnis tidak konsisten:</strong> Alamat di Facebook berbeda dengan alamat di Google, membuat algoritma ragu.</li>
-        <li><strong>Website tidak terhubung ke profil bisnis:</strong> Google butuh bukti bahwa bisnis Anda kredibel, dan website resmi adalah buktinya.</li>
-        <li><strong>Tidak ada halaman lokasi yang jelas:</strong> Website Anda tidak mencantumkan nama wilayah layanan secara spesifik di teks halaman.</li>
-      </ul>
 
-      <h2>2. Apakah Website Bisa Membantu Ranking Google Maps?</h2>
+      <h2>1. Apakah Website Bisa Membantu Bisnis Muncul di Google Maps?</h2>
       <p>
-        <strong>Ya, website yang terhubung dengan Google Business Profile dapat memperkuat sinyal relevansi bisnis lokal.</strong> 
+        Pertanyaan ini paling sering diajukan oleh klien kami. Jawabannya: <strong>Bisa, tetapi tidak otomatis hanya karena punya website.</strong> 
       </p>
-      
       <p>
-        Meskipun <strong>Google Business Profile</strong> (dulu bernama Google My Business) bisa berdiri sendiri, menambahkan <strong>website</strong> yang dioptimasi dengan baik ibarat memberikan "bensin" ke dalam profil Anda. Ketika algoritma Google merayapi website Anda dan menemukan <strong>nama bisnis, alamat, nomor telepon</strong>, serta <strong>keyword lokal</strong> yang sama persis dengan yang ada di profil Maps Anda, kepercayaan Google terhadap bisnis Anda akan melonjak tajam. Inilah yang mendorong peringkat Anda naik menembus 3 besar pencarian lokal (Local Pack).
+        Google Business Profile tetap menjadi pusat visibilitas Maps. Namun, website membantu Google memahami secara mendalam tentang identitas, layanan spesifik, dan lokasi bisnis Anda. Keduanya bekerja paling baik jika saling terhubung. Ibaratnya, Google Maps adalah "papan nama toko" di pinggir jalan, sedangkan website adalah "brosur lengkap" yang meyakinkan Google bahwa toko Anda memang benar-benar ada dan kredibel.
+      </p>
+
+      <h2>2. Langkah #1: Pastikan Nama, Alamat, dan Nomor Telepon Konsisten</h2>
+      <p>
+        Dalam dunia SEO Lokal, ada aturan emas yang disebut <strong>NAP (Name, Address, Phone Number)</strong>. Konsistensi NAP adalah nyawa dari visibilitas bisnis lokal.
+      </p>
+      <p>
+        Sebagai contoh, sebuah UMKM Solo Raya bernama "Kedai Kopi Senja". Jika di Google Maps alamatnya ditulis "Jl. Ir. Soekarno, Solo Baru", namun di footer website ditulis "Jalan Insinyur Soekarno, Madegondo, Grogol", algoritma Google akan kebingungan. Ketidakkonsistenan sekecil apa pun bisa membuat Google ragu untuk merekomendasikan bisnis Anda di Maps. Pastikan penulisan nama, alamat, dan nomor kontak di website Anda persis 100% sama dengan yang tertera di Google Business Profile.
+      </p>
+
+      <h2>3. Langkah #2: Hubungkan Website ke Google Business Profile</h2>
+      <p>
+        Langkah ini sangat sederhana namun dampaknya luar biasa untuk SEO lokal. Masuk ke dashboard akun Google Business Profile Anda, cari bagian edit profil, dan isi kolom <strong>Website</strong> dengan URL website resmi Anda.
+      </p>
+      <p>
+        Manfaatnya sangat besar. Ketika pengunjung melihat profil Anda di Maps dan menekan tombol "Situs Web", mereka langsung diarahkan ke halaman Anda yang berisi katalog lengkap. Dari kacamata algoritma, Google akan mulai mentransfer otoritas (<em>authority</em>) dan relevansi kata kunci dari website Anda langsung ke titik lokasi Maps tersebut.
       </p>
 
       <div className="my-10 overflow-hidden rounded-2xl border border-slate-200/60 bg-slate-50 shadow-sm">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img 
           src="/images/blog/optimasi-google-business-profile-dan-website-umkm.webp" 
-          alt="Ilustrasi hubungan antara optimasi Google Business Profile dan website profesional untuk UMKM lokal"
+          alt="Ilustrasi optimasi Google Business Profile yang terhubung langsung dengan website UMKM"
           className="h-auto w-full object-cover"
           loading="lazy"
         />
         <div className="bg-slate-100/50 p-4 text-center text-sm italic text-slate-500">
-          Website profesional dan Google Business Profile yang terintegrasi ibarat fondasi digital terkuat untuk mendominasi pencarian lokal.
+          Mengisi URL website pada Google Business Profile membantu pelanggan melihat profil profesional Anda sekaligus meningkatkan otoritas SEO lokal.
         </div>
       </div>
 
-      <h2>3. Langkah Pertama: Buat Google Business Profile yang Lengkap</h2>
+      <h2>4. Langkah #3: Gunakan Halaman Lokasi yang Jelas</h2>
       <p>
-        Sebelum mengoptimasi website, pastikan fondasi utama Anda di Google Maps sudah benar. Lengkapi profil bisnis Anda dengan data akurat:
+        Google bukanlah peramal. Jika Anda melayani pesanan katering, dari mana Google tahu wilayah mana saja yang bisa Anda jangkau? Anda harus memberitahunya melalui teks di website.
+      </p>
+      <p>
+        Buatlah penyebutan wilayah layanan secara eksplisit di halaman utama atau halaman tentang kami. Sebutkan kota-kota target Anda seperti <strong>Solo Baru, Sukoharjo, Surakarta, Karanganyar, Klaten, atau Wonogiri</strong>. Namun ingat, penyebutan lokasi harus <strong>natural dan relevan</strong> di dalam kalimat, bukan sekadar menjejalkan kata kunci (spam keyword). Contoh kalimat yang baik: <em>"Kami melayani pengiriman produk herbal gratis ongkir untuk seluruh pelanggan di area Solo Baru dan Surakarta."</em>
       </p>
 
-      <div className="my-6 rounded-2xl bg-blue-50/50 p-6 border border-blue-100">
-        <h3 className="font-heading text-lg font-bold text-blue-900 mb-4 mt-0">Checklist Optimasi Google Business Profile</h3>
-        <ul className="space-y-2 mb-0">
-          <li className="flex gap-2 items-start"><span className="text-blue-600 font-bold">✓</span> <span className="m-0">Gunakan <strong>nama bisnis asli</strong> (jangan spam kata kunci di nama).</span></li>
-          <li className="flex gap-2 items-start"><span className="text-blue-600 font-bold">✓</span> <span className="m-0">Pilih <strong>kategori usaha yang tepat</strong>.</span></li>
-          <li className="flex gap-2 items-start"><span className="text-blue-600 font-bold">✓</span> <span className="m-0">Tuliskan <strong>alamat lengkap</strong> hingga titik koordinat yang presisi.</span></li>
-          <li className="flex gap-2 items-start"><span className="text-blue-600 font-bold">✓</span> <span className="m-0">Gunakan <strong>nomor WhatsApp aktif</strong> untuk respon cepat.</span></li>
-          <li className="flex gap-2 items-start"><span className="text-blue-600 font-bold">✓</span> <span className="m-0">Cantumkan <strong>jam operasional</strong> dengan benar.</span></li>
-          <li className="flex gap-2 items-start"><span className="text-blue-600 font-bold">✓</span> <span className="m-0">Masukkan <strong>link website</strong> bisnis Anda di profil.</span></li>
-          <li className="flex gap-2 items-start"><span className="text-blue-600 font-bold">✓</span> <span className="m-0">Unggah <strong>foto usaha</strong> yang terang, nyata, dan profesional.</span></li>
-        </ul>
-      </div>
-
-      <h2>4. Struktur Website yang Disukai Google untuk Bisnis Lokal</h2>
+      <h2>5. Langkah #4: Tambahkan Google Maps dan Jam Operasional di Website</h2>
       <p>
-        Google memiliki standar tertentu saat membaca website untuk pencarian lokal. Jika Anda ingin bersaing, pastikan website Anda memiliki struktur berikut:
+        Menyematkan (<em>embed</em>) peta Google Maps langsung di halaman kontak website Anda adalah cara termudah untuk memberikan sinyal lokal yang kuat ke Google.
       </p>
-      <ul>
-        <li><strong>Halaman Home yang Jelas:</strong> Halaman depan harus langsung menjelaskan apa bisnis Anda dan di mana lokasinya.</li>
-        <li><strong>Halaman Layanan:</strong> Pisahkan setiap layanan ke dalam halamannya masing-masing. Jangan digabung dalam satu paragraf panjang.</li>
-        <li><strong>Kontak dengan WhatsApp Langsung:</strong> Mudahkan calon pelanggan menghubungi Anda dalam satu kali tap.</li>
-        <li><strong>Alamat atau Wilayah Layanan:</strong> Tuliskan nama kota secara eksplisit di halaman kontak maupun footer.</li>
-        <li><strong>Judul Halaman yang Mengandung Lokasi:</strong> Pastikan tag title mengandung unsur kata kunci dan lokasi.</li>
-        <li><strong>Kecepatan Website Mobile:</strong> Lebih dari 80% pencarian lokal terjadi di smartphone. Website yang lelet akan ditinggalkan dalam 3 detik pertama.</li>
-      </ul>
-
-      <h2>5. Contoh Optimasi untuk UMKM di Sukoharjo dan Surakarta</h2>
       <p>
-        Mari kita lihat bagaimana struktur ini diaplikasikan pada contoh bisnis lokal yang realistis di wilayah Solo Raya:
-      </p>
-      <ul>
-        <li><strong>Toko mebel Sukoharjo:</strong> Daripada hanya menulis "Jual Kursi Kayu", ubah judul halamannya menjadi "Pusat Kerajinan Kursi Kayu Jati Asli di Sukoharjo - Harga Pengrajin".</li>
-        <li><strong>Cafe Solo Baru:</strong> Buat halaman yang mencantumkan menu lengkap, fasilitas colokan/Wi-Fi, dan integrasikan peta lokasi Google Maps di bagian bawah website.</li>
-        <li><strong>Jasa interior Surakarta:</strong> Tampilkan portofolio foto <em>before-after</em> proyek-proyek di area Surakarta lengkap dengan deskripsi singkat.</li>
-        <li><strong>Kursus bahasa Inggris Solo Raya:</strong> Tulis testimoni siswa lokal dan panduan rute transportasi umum menuju lokasi les.</li>
-        <li><strong>Servis AC Karanganyar:</strong> Pastikan ada tombol WhatsApp melayang di pojok layar dengan teks "Panggil Teknisi Sekarang".</li>
-      </ul>
-
-      <h2>6. Kesalahan yang Membuat Website Sulit Ditemukan Google</h2>
-      <p>
-        Banyak pemilik bisnis merasa sudah memiliki website, tetapi tidak kunjung mendapatkan traffic. Hindari kesalahan-kesalahan fatal berikut ini:
-      </p>
-      <ul>
-        <li><strong>Website hanya satu halaman tanpa informasi jelas:</strong> Google menyukai website yang kaya akan konten deskriptif.</li>
-        <li><strong>Tidak mobile friendly:</strong> Teks yang terlalu kecil dan tombol yang sulit dipencet di layar HP akan dihukum oleh algoritma Google.</li>
-        <li><strong>Loading lambat:</strong> Pengunjung tidak sabar. Jika lebih dari 3 detik website belum terbuka, mereka akan menutupnya.</li>
-        <li><strong>Tidak memiliki heading yang rapi:</strong> Penggunaan tag H1, H2, dan H3 yang berantakan membuat Google bingung membaca hirarki konten.</li>
-        <li><strong>Tidak ada artikel atau konten pendukung:</strong> Blog atau artikel edukasi sangat penting untuk menjaga website tetap segar.</li>
-        <li><strong>Alamat dan nomor telepon berbeda-beda di internet:</strong> Inkonsistensi data NAP (Name, Address, Phone) akan merusak kredibilitas lokal Anda.</li>
-      </ul>
-
-      <h2>7. Checklist 10 Menit Sebelum Menghubungkan Website ke Google Maps</h2>
-      <p>
-        Sebelum menyematkan link website Anda ke dalam profil Google, lakukan audit kilat dengan checklist berikut ini:
+        Manfaatnya sangat banyak: ini <strong>meningkatkan kepercayaan pengunjung</strong> karena mereka melihat titik lokasi nyata. Ini juga <strong>memudahkan pelanggan menemukan lokasi</strong> tanpa harus pindah aplikasi. Secara langsung, ini <strong>mengurangi pertanyaan "lokasinya di mana?"</strong> ke WhatsApp admin Anda. Selain peta, pastikan juga untuk menuliskan jam operasional yang akurat dan sinkron dengan jam buka di Google Business Profile.
       </p>
 
-      <div className="my-6 rounded-2xl bg-emerald-50/50 p-6 border border-emerald-100">
-        <h3 className="font-heading text-lg font-bold text-emerald-900 mb-4 mt-0">Final Check Optimasi SEO Lokal</h3>
-        <ul className="space-y-2 mb-0 text-emerald-900">
-          <li className="flex gap-2 items-start">
-            <span className="flex items-center justify-center h-5 w-5 rounded-full bg-emerald-500 text-white font-bold text-xs mt-0.5">✓</span> 
-            <span className="m-0">Website bisa dibuka dengan cepat dan rapi di layar HP.</span>
+      <h2>6. Langkah #5: Buat Konten yang Menyebut Area Layanan Secara Natural</h2>
+      <p>
+        Cara paling ampuh untuk mendominasi pencarian lokal adalah dengan membuat artikel blog yang membahas aktivitas bisnis Anda di kota tersebut.
+      </p>
+      <p>
+        Sebagai contoh, Anda bisa membuat halaman portfolio yang menceritakan tentang proyek <strong>website UMKM Solo Baru</strong> yang baru Anda selesaikan. Atau jika Anda usaha makanan, buatlah artikel tentang menu terlaris <strong>website kuliner Solo Raya</strong> di tahun ini. Anda juga bisa menargetkan kata kunci seperti <strong>jasa website Sukoharjo</strong> atau <strong>SEO lokal Surakarta</strong> dengan membahas tantangan spesifik di kota-kota tersebut. Artikel seperti ini membantu Google memahami <strong>relevansi geografis bisnis</strong> secara organik.
+      </p>
+
+      <div className="my-8 rounded-2xl bg-slate-50 p-6 border border-slate-200">
+        <h3 className="font-heading text-xl font-bold text-slate-800 mb-4 mt-0">Kesalahan yang Sering Membuat Website Tidak Membantu Google Maps</h3>
+        <ul className="space-y-3 mb-0 text-slate-700">
+          <li className="flex gap-3 items-start">
+            <span className="flex items-center justify-center min-h-6 min-w-6 h-6 w-6 rounded bg-red-100 text-red-600 font-bold text-sm mt-0.5">✕</span> 
+            <span className="m-0"><strong>Alamat tidak lengkap:</strong> Hanya menulis nama kota tanpa jalan atau kecamatan yang spesifik.</span>
           </li>
-          <li className="flex gap-2 items-start">
-            <span className="flex items-center justify-center h-5 w-5 rounded-full bg-emerald-500 text-white font-bold text-xs mt-0.5">✓</span> 
-            <span className="m-0">Gembok keamanan HTTPS sudah aktif.</span>
+          <li className="flex gap-3 items-start">
+            <span className="flex items-center justify-center min-h-6 min-w-6 h-6 w-6 rounded bg-red-100 text-red-600 font-bold text-sm mt-0.5">✕</span> 
+            <span className="m-0"><strong>Nomor telepon berbeda:</strong> Nomor kontak di website berbeda dengan yang didaftarkan di Maps.</span>
           </li>
-          <li className="flex gap-2 items-start">
-            <span className="flex items-center justify-center h-5 w-5 rounded-full bg-emerald-500 text-white font-bold text-xs mt-0.5">✓</span> 
-            <span className="m-0">Tombol atau nomor WhatsApp bisa langsung diklik.</span>
+          <li className="flex gap-3 items-start">
+            <span className="flex items-center justify-center min-h-6 min-w-6 h-6 w-6 rounded bg-red-100 text-red-600 font-bold text-sm mt-0.5">✕</span> 
+            <span className="m-0"><strong>Tidak ada halaman kontak yang jelas:</strong> Pengunjung kebingungan mencari cara menghubungi Anda.</span>
           </li>
-          <li className="flex gap-2 items-start">
-            <span className="flex items-center justify-center h-5 w-5 rounded-full bg-emerald-500 text-white font-bold text-xs mt-0.5">✓</span> 
-            <span className="m-0">Judul halaman utama mengandung nama layanan + target lokasi.</span>
+          <li className="flex gap-3 items-start">
+            <span className="flex items-center justify-center min-h-6 min-w-6 h-6 w-6 rounded bg-red-100 text-red-600 font-bold text-sm mt-0.5">✕</span> 
+            <span className="m-0"><strong>Website terlalu lambat dibuka di HP:</strong> Google sangat enggan merekomendasikan website yang lambat (kalah bersaing di pencarian lokal).</span>
           </li>
-          <li className="flex gap-2 items-start">
-            <span className="flex items-center justify-center h-5 w-5 rounded-full bg-emerald-500 text-white font-bold text-xs mt-0.5">✓</span> 
-            <span className="m-0">Google Business Profile sudah terverifikasi kepemilikannya.</span>
+          <li className="flex gap-3 items-start">
+            <span className="flex items-center justify-center min-h-6 min-w-6 h-6 w-6 rounded bg-red-100 text-red-600 font-bold text-sm mt-0.5">✕</span> 
+            <span className="m-0"><strong>Tidak menyebut wilayah layanan sama sekali:</strong> Google tidak tahu di kota mana bisnis Anda beroperasi.</span>
           </li>
-          <li className="flex gap-2 items-start">
-            <span className="flex items-center justify-center h-5 w-5 rounded-full bg-emerald-500 text-white font-bold text-xs mt-0.5">✓</span> 
-            <span className="m-0">Link website resmi sudah dipasang dan berfungsi di profil bisnis Anda.</span>
+          <li className="flex gap-3 items-start">
+            <span className="flex items-center justify-center min-h-6 min-w-6 h-6 w-6 rounded bg-red-100 text-red-600 font-bold text-sm mt-0.5">✕</span> 
+            <span className="m-0"><strong>Google Business Profile belum diverifikasi:</strong> Profil sudah dibuat tapi proses verifikasi PIN/Video belum selesai.</span>
+          </li>
+          <li className="flex gap-3 items-start">
+            <span className="flex items-center justify-center min-h-6 min-w-6 h-6 w-6 rounded bg-red-100 text-red-600 font-bold text-sm mt-0.5">✕</span> 
+            <span className="m-0"><strong>Tidak ada konten lokal yang relevan:</strong> Website kosong, hanya berisi foto produk tanpa ada cerita soal layanan di kota target.</span>
           </li>
         </ul>
       </div>
-
-      <p>
-        Jika bisnis Anda berada di wilayah Solo Raya, baca juga <strong><Link href="/blog/jasa-pembuatan-website-surakarta">Jasa Pembuatan Website Surakarta yang SEO Friendly untuk Bisnis Lokal</Link></strong> untuk memahami bagaimana website yang cepat dan SEO-friendly dapat membantu bisnis lokal lebih mudah ditemukan pelanggan.
-      </p>
 
       <hr className="my-10 border-slate-200" />
 
-      <h2>FAQ: Pertanyaan Seputar Google Maps dan Website Bisnis</h2>
+      <h2>FAQ: Tanya Jawab Seputar Website & Google Maps</h2>
       
       <details className="group border-b border-slate-200 py-4 cursor-pointer">
-        <summary className="font-heading text-lg font-bold text-slate-900 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 rounded-lg">Apakah Google Maps gratis untuk UMKM?</summary>
+        <summary className="font-heading text-lg font-bold text-slate-900 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 rounded-lg">Apakah website otomatis muncul di Google Maps?</summary>
         <p className="mt-4 text-slate-600 leading-relaxed pl-4 border-l-2 border-blue-100">
-          Ya, mendaftarkan dan mengelola Google Business Profile sepenuhnya gratis. Anda hanya perlu memverifikasi kepemilikan bisnis sesuai prosedur Google agar profil Anda dapat tampil di Maps.
+          Tidak. Website dan Google Maps adalah dua platform yang berbeda meskipun sama-sama produk Google. Anda harus mendaftarkan titik lokasi melalui Google Business Profile secara manual, lalu memasukkan *link* website Anda ke dalam profil tersebut agar saling terhubung.
         </p>
       </details>
 
       <details className="group border-b border-slate-200 py-4 cursor-pointer">
-        <summary className="font-heading text-lg font-bold text-slate-900 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 rounded-lg">Berapa lama website bisa muncul di Google Search?</summary>
+        <summary className="font-heading text-lg font-bold text-slate-900 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 rounded-lg">Apakah Google Business Profile gratis untuk UMKM?</summary>
         <p className="mt-4 text-slate-600 leading-relaxed pl-4 border-l-2 border-blue-100">
-          Waktu indexing bisa bervariasi. Website baru yang dikonfigurasi dengan Google Search Console dan sitemap yang benar biasanya akan mulai terindeks dalam hitungan beberapa hari hingga dua minggu, namun untuk naik ke halaman pertama butuh proses optimasi berkelanjutan.
+          Ya, mendaftarkan dan mengelola Google Business Profile 100% gratis. Google tidak pernah memungut biaya untuk membuat titik lokasi di Maps. Jika ada pihak yang menagih biaya pendaftaran (bukan biaya jasa optimasi/setup), berhati-hatilah.
         </p>
       </details>
 
       <details className="group border-b border-slate-200 py-4 cursor-pointer">
-        <summary className="font-heading text-lg font-bold text-slate-900 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 rounded-lg">Apakah cukup menggunakan Instagram tanpa website?</summary>
+        <summary className="font-heading text-lg font-bold text-slate-900 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 rounded-lg">Berapa lama website bisa membantu pencarian lokal?</summary>
         <p className="mt-4 text-slate-600 leading-relaxed pl-4 border-l-2 border-blue-100">
-          Instagram sangat bagus untuk membangun <em>awareness</em> dan audiens. Namun, untuk menangkap pelanggan dengan <strong>niat beli tinggi</strong> (orang yang mencari solusi instan di Google), Anda mutlak membutuhkan kombinasi Google Maps dan website profesional.
+          Dampak SEO lokal biasanya mulai terlihat dalam 3 hingga 6 bulan jika Anda konsisten mengoptimasi website dan profil bisnis Anda. Namun, penyematan URL website di profil Maps akan langsung memberikan manfaat kepercayaan bagi pengunjung sejak hari pertama.
         </p>
       </details>
 
       <details className="group border-b border-slate-200 py-4 cursor-pointer">
-        <summary className="font-heading text-lg font-bold text-slate-900 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 rounded-lg">Apakah website baru bisa langsung terhubung ke Google Business Profile?</summary>
+        <summary className="font-heading text-lg font-bold text-slate-900 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 rounded-lg">Apakah bisnis rumahan tetap bisa muncul di Google Maps?</summary>
         <p className="mt-4 text-slate-600 leading-relaxed pl-4 border-l-2 border-blue-100">
-          Tentu saja. Setelah website Anda jadi dan online, Anda cukup menyalin alamat URL (domain) website Anda dan menempelkannya pada kolom situs web di dashboard Google Business Profile Anda.
+          Sangat bisa. Google Business Profile memungkinkan Anda untuk mendaftarkan bisnis rumahan atau layanan panggilan. Anda bahkan bisa memilih untuk menyembunyikan alamat lengkap rumah Anda dari publik, dan hanya menampilkan area wilayah layanan Anda (misalnya: melayani seluruh Sukoharjo).
         </p>
       </details>
 
@@ -201,21 +172,32 @@ export default function ArticleContent() {
 
       <h2>Artikel Terkait</h2>
       <ul>
-        <li><Link href="/blog/jasa-pembuatan-website-sukoharjo">Jasa Pembuatan Website Sukoharjo untuk UMKM Modern</Link></li>
+        <li><Link href="/blog/website-umkm-solo-baru-fitur-penting">Website UMKM Solo Baru: Fitur Penting agar Bisnis Terlihat Profesional</Link></li>
+        <li><Link href="/blog/website-toko-kuliner-solo-raya">Website untuk Toko dan Kuliner Solo Raya: Fitur yang Wajib Dimiliki UMKM</Link></li>
+        <li><Link href="/blog/kesalahan-website-umkm-pelanggan-tidak-menghubungi">7 Kesalahan Website UMKM yang Membuat Pelanggan Tidak Jadi Menghubungi Anda</Link></li>
         <li><Link href="/blog/jasa-pembuatan-website-surakarta">Jasa Pembuatan Website Surakarta yang SEO Friendly untuk Bisnis Lokal</Link></li>
       </ul>
 
       <hr className="my-10 border-slate-200" />
 
-      <div className="bg-slate-900 text-white rounded-2xl p-8 my-8 text-center sm:text-left sm:flex sm:items-center sm:justify-between">
-        <div className="mb-6 sm:mb-0 sm:pr-8">
-          <h3 className="text-xl font-bold text-white mb-2 mt-0">Ingin Tahu Detail Layanan Kami?</h3>
-          <p className="text-slate-300 m-0">Lihat portofolio, teknologi yang kami gunakan, dan berbagai layanan unggulan Code Craft Studio untuk mentransformasi bisnis Anda.</p>
-        </div>
-        <Link href="/" className="inline-block bg-blue-500 hover:bg-blue-600 text-white font-semibold py-3 px-6 rounded-full transition-colors whitespace-nowrap">
-          Lihat Beranda & Layanan
-        </Link>
-      </div>
+      <h2>Lihat Layanan Pembuatan Website</h2>
+      <p>
+        Jika Anda ingin melihat portfolio, paket layanan, dan konsultasi langsung, kunjungi halaman utama <strong>Code Craft Studio</strong>:
+      </p>
+      <p>
+        👉 <strong><Link href="/">Kembali ke Beranda</Link></strong>
+      </p>
+
+      <p>Di halaman utama Anda bisa melihat:</p>
+      <ul>
+        <li>Portfolio project nyata</li>
+        <li>Paket website untuk UMKM dan bisnis lokal</li>
+        <li>Layanan optimasi SEO dan GEO</li>
+        <li>Pembuatan aplikasi web dan mobile</li>
+        <li>Konsultasi gratis melalui WhatsApp</li>
+      </ul>
+
+      <hr className="my-10 border-slate-200" />
 
       <h2>Konsultasi Website UMKM Gratis</h2>
       <p>
