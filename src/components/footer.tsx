@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { FaWhatsapp } from 'react-icons/fa';
+import { FaWhatsapp, FaGithub } from 'react-icons/fa';
 import { SiTiktok } from 'react-icons/si';
 import { Globe } from 'lucide-react';
 
@@ -85,6 +85,18 @@ export function Footer() {
                 >
                   <Globe className="h-5 w-5 text-blue-100" />
                   <span>Website: codecraftstudio.my.id</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://github.com/xdaamar"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Kunjungi GitHub xdaamar"
+                  className="inline-flex items-center gap-2 hover:text-blue-300 transition-colors"
+                >
+                  <FaGithub className="h-5 w-5 text-white" />
+                  <span>GitHub: @xdaamar</span>
                 </a>
               </li>
             </ul>
