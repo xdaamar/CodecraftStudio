@@ -10,12 +10,14 @@ import { post as postKuliner } from './website-toko-kuliner-solo-raya';
 import { post as postKesalahan } from './kesalahan-website-umkm-pelanggan-tidak-menghubungi';
 import { post as postGbpSukoharjo } from './google-business-profile-umkm-sukoharjo';
 import { post as postSurakartaSeoFriendly } from './jasa-pembuatan-website-surakarta-seo-friendly';
+import { post as postSoloBaruStrategiGoogle } from './website-bisnis-solo-baru-strategi-google';
 import GoogleMapsContent from './cara-website-umkm-muncul-di-google';
 import SoloBaruContent from './website-umkm-solo-baru-fitur-penting';
 import KulinerContent from './website-toko-kuliner-solo-raya';
 import KesalahanContent from './kesalahan-website-umkm-pelanggan-tidak-menghubungi';
 import GbpSukoharjoContent from './google-business-profile-umkm-sukoharjo';
 import SurakartaSeoFriendlyContent from './jasa-pembuatan-website-surakarta-seo-friendly';
+import SoloBaruStrategiGoogleContent from './website-bisnis-solo-baru-strategi-google';
 
 export const blogPosts = [
   { ...sukoharjo, Component: SukoharjoContent },
@@ -43,6 +45,10 @@ export const blogPosts = [
   {
     ...postSurakartaSeoFriendly,
     Component: SurakartaSeoFriendlyContent,
+  },
+  {
+    ...postSoloBaruStrategiGoogle,
+    Component: SoloBaruStrategiGoogleContent,
   },
 ].sort((a, b) => b.date.localeCompare(a.date));
 
